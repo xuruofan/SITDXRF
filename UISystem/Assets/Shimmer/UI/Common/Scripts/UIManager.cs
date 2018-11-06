@@ -93,7 +93,7 @@ namespace Shimmer.UI.Common
 			}
 
 			// Destroy the page being popped
-			GameObject.Destroy(lastPageObject);
+			GameObject.Destroy(lastPageObject, lastPage.DelayDisableInSeconds);
 		}
 
 		public void Reset()
