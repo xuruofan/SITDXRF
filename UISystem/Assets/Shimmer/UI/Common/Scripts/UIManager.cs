@@ -26,16 +26,6 @@ namespace Shimmer.UI.Common
             }
         }
 
-        public void RegisterPage(GameObject page)
-        {
-            Pages.Add(page);
-        }
-
-        public void UnregisterPage(GameObject page)
-        {
-			Pages.Remove(page);
-        }
-
 		private void PushPage(GameObject pagePrefab)
 		{
 			Assert.IsNotNull(pagePrefab, "Prefab is null!");
@@ -92,7 +82,7 @@ namespace Shimmer.UI.Common
 			var lastPageObject = Pages[Pages.Count - 1];
 			var lastPage = lastPageObject.GetComponent<Page>();
 			lastPage.DisablePage();
-			UnregisterPage(lastPageObject);
+			Pages.Remove(lastPageObject);
 
 			// Enable the page before
 			if (Pages.Count > 0)
