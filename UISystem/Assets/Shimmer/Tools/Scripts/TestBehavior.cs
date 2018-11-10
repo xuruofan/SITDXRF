@@ -1,0 +1,11 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Shimmer.Tools
+{
+	public class TestBehavior : MonoBehaviour
+	{
+		public Recipe Recipe;
+	}
+}

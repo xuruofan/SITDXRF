@@ -10,7 +10,7 @@ namespace Shimmer.UI.Common
 
         private void Start()
         {
-            Manager.RegisterPage(gameObject);
+            
         }
 
 		public void EnablePage()
