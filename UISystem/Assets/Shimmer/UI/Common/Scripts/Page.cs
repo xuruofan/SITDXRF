@@ -14,6 +14,7 @@ namespace Shimmer.UI.Common
 
         private void Start()
         {
+			Manager.RegisterPage(this);
         }
 
 		public void EnablePage()

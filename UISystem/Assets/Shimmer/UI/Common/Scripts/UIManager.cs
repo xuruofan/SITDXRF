@@ -11,30 +11,45 @@ namespace Shimmer.UI.Common
     [CreateAssetMenu(fileName = "NewUIManager", menuName = "Shimmer/UI/Common/UI Manager")]
 	public class UIManager : ScriptableObject
 	{
+		[Header("Setup")]
+		public bool AllowEmpty;
         public List<GameObject> Pages;
 
-        public void GoTo(GameObject pagePrefab)
+        public void GoTo(GameObject _pagePrefab)
         {
-			PushPage(pagePrefab);
+			PushPage(_pagePrefab);
         }
 
         public void Back()
         {
-            if (Pages.Count > 0)
+			int limit = AllowEmpty ? 0 : 1;
+            if (Pages.Count > limit)
             {
 				PopPage();
             }
         }
 
-		private void PushPage(GameObject pagePrefab)
+		public void RegisterPage(Page _page)
 		{
-			Assert.IsNotNull(pagePrefab, "Prefab is null!");
+			if (Pages.Count == 0)
+			{
+				_page.EnablePage();
+			}
+			if (!Pages.Contains(_page.gameObject))
+			{
+				Pages.Add(_page.gameObject);
+			}
+		}
+
+		private void PushPage(GameObject _pagePrefab)
+		{
+			Assert.IsNotNull(_pagePrefab, "Prefab is null!");
 
 			// If the page already exists in the stack, pop all the pages on top of it to avoid cycles
 			int foundIndex = Globals.INVALID_INDEX;
 			for (int i = 0; i < Pages.Count; i++)
 			{
-				if (Pages[i].name.StartsWith(pagePrefab.name))
+				if (Pages[i].name.StartsWith(_pagePrefab.name))
 				{
 					foundIndex = i;
 					break;
@@ -60,12 +75,13 @@ namespace Shimmer.UI.Common
 			}
 
 			// Spawn new page
-			var newPageObject = Instantiate(pagePrefab, GameObject.Find("Canvas").transform);
+			var newPageObject = Instantiate(_pagePrefab, GameObject.Find("Canvas").transform);
 			var newPage = newPageObject.GetComponent<Page>();
 			Assert.IsNotNull(newPage, "Object does not contain a Page component!");
 
 			// Enable new page
 			newPage.EnablePage();
+			RegisterPage(newPage);
 		}
 
 		/// <summary>
@@ -82,7 +98,7 @@ namespace Shimmer.UI.Common
 			var lastPageObject = Pages[Pages.Count - 1];
 			var lastPage = lastPageObject.GetComponent<Page>();
 			lastPage.DisablePage();
-			Pages.Remove(lastPageObject);
+			Pages.RemoveAt(Pages.Count - 1);
 
 			// Enable the page before
 			if (Pages.Count > 0)
@@ -99,6 +115,11 @@ namespace Shimmer.UI.Common
 		public void Reset()
 		{
 			Pages.Clear();
+		}
+
+		private void OnEnable()
+		{
+			Reset();
 		}
 	}
 }

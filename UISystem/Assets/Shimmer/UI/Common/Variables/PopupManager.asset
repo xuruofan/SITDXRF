@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 241b67abf1acf2a4fb3b391649ec6662, type: 3}
-  m_Name: MenuManager
+  m_Name: PopupManager
   m_EditorClassIdentifier: 
-  AllowEmpty: 0
+  AllowEmpty: 1
   Pages: []
