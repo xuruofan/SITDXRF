@@ -33,10 +33,5 @@ namespace Shimmer.UI.Common
 		{
 			gameObject.SetActive(false);
 		}
-
-		private void OnApplicationQuit()
-		{
-			Manager.Reset();
-		}
 	}
 }

@@ -9,7 +9,7 @@ namespace Shimmer.UI.Common
 	/// This class manages the menu in the game like a push-and-pop stack.
 	/// </summary>
     [CreateAssetMenu(fileName = "NewUIManager", menuName = "Shimmer/UI/Common/UI Manager")]
-	public class UIManager : ScriptableObject
+	public class UIManager : ResettableScriptableObject
 	{
 		[Header("Setup")]
 		public bool AllowEmpty;
@@ -46,7 +46,7 @@ namespace Shimmer.UI.Common
 			Assert.IsNotNull(_pagePrefab, "Prefab is null!");
 
 			// If the page already exists in the stack, pop all the pages on top of it to avoid cycles
-			int foundIndex = Globals.INVALID_INDEX;
+			int foundIndex = -1;
 			for (int i = 0; i < Pages.Count; i++)
 			{
 				if (Pages[i].name.StartsWith(_pagePrefab.name))
@@ -55,7 +55,7 @@ namespace Shimmer.UI.Common
 					break;
 				}
 			}
-			if (foundIndex != Globals.INVALID_INDEX)
+			if (foundIndex != -1)
 			{
 				for (int i = Pages.Count - 1; i > foundIndex; i--)
 				{
@@ -110,16 +110,6 @@ namespace Shimmer.UI.Common
 
 			// Destroy the page being popped
 			GameObject.Destroy(lastPageObject, lastPage.DelayDisableInSeconds);
-		}
-
-		public void Reset()
-		{
-			Pages.Clear();
-		}
-
-		private void OnEnable()
-		{
-			Reset();
 		}
 	}
 }
