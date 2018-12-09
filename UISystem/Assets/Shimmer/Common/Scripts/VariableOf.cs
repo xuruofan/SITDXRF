@@ -1,13 +1,41 @@
-﻿namespace Shimmer.Common
-{
-	public interface IVariable<T>
-	{
-		Event Changed { get; }
+﻿using UnityEngine;
 
-		T GetValue();
-		void SetValue(T _value);
-		void Subscribe();
-		void Unsubscribe();
-		void Raise();
+namespace Shimmer.Common
+{
+	public class VariableOf<T> : ResettableScriptableObject, IVariable<T>
+	{
+		[SerializeField]
+		private T m_value;
+		
+		public Event Changed 
+		{
+			get;
+		}
+
+		public T GetValue()
+		{
+			return m_value;
+		}
+
+		public void Raise()
+		{
+			Changed.Raise();
+		}
+
+		public void SetValue(T _value)
+		{
+			m_value = _value;
+			Changed.Raise();
+		}
+
+		public void Subscribe(Callback _callback)
+		{
+			Changed.Subscribe(_callback);
+		}
+
+		public void Unsubscribe(Callback _callback)
+		{
+			Changed.Unsubscribe(_callback);
+		}
 	}
 }

@@ -6,8 +6,8 @@
 
 		T GetValue();
 		void SetValue(T _value);
-		void Subscribe();
-		void Unsubscribe();
+		void Subscribe(Callback _callback);
+		void Unsubscribe(Callback _callback);
 		void Raise();
 	}
 }
