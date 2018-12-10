@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Shimmer/UI/MainMenu/Scenes/MainMenu.unity
+- path: Assets/UI/MainMenu/Scenes/MainMenu.unity
   isLoaded: 1
   isActive: 1
