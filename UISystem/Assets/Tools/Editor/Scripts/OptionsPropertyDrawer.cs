@@ -2,6 +2,7 @@
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Shimmer.Tools.Editor
 {
@@ -39,11 +40,10 @@ namespace Shimmer.Tools.Editor
 
 		private GUIContent MakeItem(Type _type)
 		{
-			var displayName = _type.FullName
-				.Replace("Shimmer.", "")
-				.Replace('.', '/')
-				.Replace("[]", "");
-			return new GUIContent(displayName);
+			var menuName = _type.GetProperty("MenuName");
+			Assert.IsNotNull(menuName, $"{_type.ToString()} did not specify a menu name.");
+
+			return new GUIContent(menuName.GetValue(null) as string);
 		}
 
 		private void Setup()

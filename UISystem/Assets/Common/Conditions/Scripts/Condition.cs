@@ -1,4 +1,5 @@
 ﻿using System;
+using Shimmer.Common.Variables;
 using Shimmer.Tools;
 using UnityEngine;
 
@@ -6,14 +7,16 @@ namespace Shimmer.Common.Conditions
 {
 	public abstract class Condition
 	{
-		public virtual void Subscribe() { }
-		public virtual void Unsubscribe() { }
+		public virtual void Subscribe(Callback _callback) { }
+		public virtual void Unsubscribe(Callback _callback) { }
 		public abstract bool Evaluate();
 	}
 
 	[Serializable]
 	public class ConditionList : ReorderableList<ConditionOptions>
 	{
+		public delegate void Callback(bool _result);
+
 		public enum OperatorSelection
 		{
 			Or,
@@ -23,31 +26,57 @@ namespace Shimmer.Common.Conditions
 		[Tooltip("Empty condition list returns FALSE for OR and TRUE for AND")]
 		public OperatorSelection Operator = OperatorSelection.Or;
 
-		public void Subscribe()
+		private Callback m_Callback;
+
+		public void Enable(Callback _callback)
+		{
+			m_Callback = _callback;
+			Subscribe();
+		}
+
+		public void Disable()
+		{
+			m_Callback = null;
+			Unsubscribe();
+		}
+
+		private void Subscribe()
 		{
 			foreach (var item in Items)
 			{
 				Condition condition = item;
 				if (condition != null)
 				{
-					condition.Subscribe();
+					condition.Subscribe(OnConditionChanged);
 				}
 			}
 		}
 
-		public void Unsubscribe()
+		private void Unsubscribe()
 		{
 			foreach (var item in Items)
 			{
 				Condition condition = item;
 				if (condition != null)
 				{
-					condition.Unsubscribe();
+					condition.Unsubscribe(OnConditionChanged);
 				}
 			}
 		}
 
-		public bool Evaluate()
+		private void OnConditionChanged()
+		{
+			try
+			{
+				m_Callback(Evaluate());
+			}
+			catch (Exception e)
+			{
+				Debug.LogError($"Exception in Event: {e.Message}");
+			}
+		}
+
+		private bool Evaluate()
 		{
 			switch (Operator)
 			{
