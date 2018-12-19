@@ -23,8 +23,8 @@ namespace Shimmer.Common.Variables
 		public Event Changed { get; } = new Event();
 	}
 
-	public class ReferenceOf<T, TVariable> : Reference, IVariable<T>
-		where TVariable : class, IVariable<T>
+	public class ReferenceOf<T, TVariable> : Reference, IVariableOf<T>
+		where TVariable : class, IVariableOf<T>
 	{
 		public T Constant;
 		public TVariable Variable;

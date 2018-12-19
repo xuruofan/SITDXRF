@@ -8,11 +8,21 @@ namespace Shimmer.Common.Actions.Variable
 	public class SetInt : Action
 	{
 		public IntVariable Variable;
+		public IntReference Value;
+
+		public static string MenuName
+		{
+			get
+			{
+				return "Variable/SetInt";
+			}
+		}
 
 		public override void Execute()
 		{
 			Assert.IsNotNull(Variable, "Please set a Variable!");
-			Variable.SetValue(0);
+
+			Variable.SetValue(Value.GetValue());
 		}
 	}
 
