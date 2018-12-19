@@ -1,16 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Shimmer.Common.Actions;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Shimmer.UI.Common
 {
     public class Page : MonoBehaviour
     {
         public UIManager Manager;
-		public UnityEvent OnEnabled;
-		public UnityEvent OnDisabled;
 		public float DelayDisableInSeconds;
+		public ActionList OnEnabled;
+		public ActionList OnDisabled;
 
         private void Start()
         {
@@ -20,12 +18,12 @@ namespace Shimmer.UI.Common
 		public void EnablePage()
 		{
 			gameObject.SetActive(true);
-			OnEnabled.Invoke();
+			OnEnabled.Execute();
 		}
 
 		public void DisablePage()
 		{
-			OnDisabled.Invoke();
+			OnDisabled.Execute();
 			Invoke("DelayDisable", DelayDisableInSeconds);	
 		}
 

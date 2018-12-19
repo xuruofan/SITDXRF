@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224074037173874054}
   - component: {fileID: 222407718218768402}
+  - component: {fileID: 114328957760964886}
   - component: {fileID: 114682970724167042}
   - component: {fileID: 114123848379051084}
   m_Layer: 5
@@ -59,6 +60,23 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114328957760964886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1052657771721792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076cbda1a04185d48957bea4d5d6b03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Manager: {fileID: 11400000, guid: 5f5f25823887fd243896f2ddf13b1b77, type: 2}
+  DelayDisableInSeconds: 0
+  OnEnabled:
+    Items: []
+  OnDisabled:
+    Items: []
 --- !u!114 &114682970724167042
 MonoBehaviour:
   m_ObjectHideFlags: 1

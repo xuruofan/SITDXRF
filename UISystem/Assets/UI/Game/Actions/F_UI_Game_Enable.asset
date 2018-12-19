@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d4c3a247e2fa8499b594d95a81b4e6, type: 3}
+  m_Name: F_UI_Game_Enable
+  m_EditorClassIdentifier: 
+  m_Value:
+    Items:
+    - m_Variable_SetInt: []
+      m_Text_PrintLog: []
+      m_UI_GoTo:
+      - Manager: {fileID: 11400000, guid: 5f5f25823887fd243896f2ddf13b1b77, type: 2}
+        Page: {fileID: 1052657771721792, guid: 6b06aeda17d39bc468791ff6ceb4fb40, type: 2}
+      m_UI_GoBack: []

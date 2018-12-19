@@ -312,9 +312,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Common\Actions\Execution\Invoke.cs" />
     <Compile Include="Assets\Common\Actions\Scripts\Action.cs" />
+    <Compile Include="Assets\Common\Actions\Scripts\ActionListVariable.cs" />
     <Compile Include="Assets\Common\Actions\Scripts\ActionOptions.cs" />
     <Compile Include="Assets\Common\Actions\Text\PrintLog.cs" />
+    <Compile Include="Assets\Common\Actions\UI\GoBack.cs" />
+    <Compile Include="Assets\Common\Actions\UI\GoTo.cs" />
     <Compile Include="Assets\Common\Actions\Variable\SetInt.cs" />
     <Compile Include="Assets\Common\Conditions\Scripts\Condition.cs" />
     <Compile Include="Assets\Common\Conditions\Scripts\ConditionOptions.cs" />

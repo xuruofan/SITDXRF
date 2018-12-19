@@ -321,6 +321,7 @@
     <Compile Include="Assets\Common\Editor\Scripts\ReferencePropertyDrawer.cs" />
     <Compile Include="Assets\Tools\Editor\Scripts\EditorHelper.cs" />
     <Compile Include="Assets\Tools\Editor\Scripts\OptionsPropertyDrawer.cs" />
+    <Compile Include="Assets\Tools\Editor\Scripts\ReorderableListPropertyDrawer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
