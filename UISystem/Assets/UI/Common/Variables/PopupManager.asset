@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241b67abf1acf2a4fb3b391649ec6662, type: 3}
   m_Name: PopupManager
   m_EditorClassIdentifier: 
+  Reset: 1
   AllowEmpty: 1
   Pages: []

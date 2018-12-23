@@ -8,7 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65005ff4b6e8dbf4ca7f792f97ab16e4, type: 3}
+  m_Script: {fileID: 11500000, guid: e9afc85966f0cbe4e8f52000edb0082e, type: 3}
   m_Name: E_GameState_Started
   m_EditorClassIdentifier: 
-  m_Value: 1
+  Reset: 0
+  m_Value: Started

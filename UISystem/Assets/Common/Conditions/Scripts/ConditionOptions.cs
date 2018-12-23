@@ -10,5 +10,6 @@ namespace Shimmer.Common.Conditions
 		public Situation.OnEnable[] m_Situation_OnEnable;
 		// Variable
 		public Variable.Changed[] m_Variable_Changed;
+		public Variable.TestString[] m_Variable_TestString;
 	}
 }

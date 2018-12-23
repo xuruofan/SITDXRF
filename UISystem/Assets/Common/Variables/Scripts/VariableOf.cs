@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Shimmer.Common.Variables
 {
+	[Serializable]
 	public abstract class Variable : ResettableScriptableObject, IVariable
 	{
 		public Event Changed { get; } = new Event();
@@ -27,7 +29,7 @@ namespace Shimmer.Common.Variables
 			return m_Value;
 		}
 
-		public void SetValue(T _value)
+		public virtual void SetValue(T _value)
 		{
 			m_Value = _value;
 			Changed.Raise();

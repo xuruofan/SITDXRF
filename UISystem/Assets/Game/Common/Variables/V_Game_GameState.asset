@@ -8,7 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8869ad02dbea2449baec824590e7330, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ce0a5b8112168445aeedbbadea0d433, type: 3}
   m_Name: V_Game_GameState
   m_EditorClassIdentifier: 
-  m_Value: {fileID: 11400000, guid: 95e9fc3356a5f97418e9a3c8f4a41388, type: 2}
+  Reset: 1
+  m_Value: 

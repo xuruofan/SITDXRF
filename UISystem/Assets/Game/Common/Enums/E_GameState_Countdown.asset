@@ -8,7 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: e9afc85966f0cbe4e8f52000edb0082e, type: 3}
   m_Name: E_GameState_Countdown
-  m_EditorClassIdentifier: Assembly-CSharp:Shimmer.Game.Common:GameStateEnum
-  m_Value: 0
+  m_EditorClassIdentifier: 
+  Reset: 0
+  m_Value: Countdown

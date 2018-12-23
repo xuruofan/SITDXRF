@@ -11,11 +11,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d4c3a247e2fa8499b594d95a81b4e6, type: 3}
   m_Name: F_UI_Game_Enable
   m_EditorClassIdentifier: 
+  Reset: 0
   m_Value:
     Items:
-    - m_Variable_SetInt: []
+    - m_Execution_Invoke: []
+      m_Variable_SetInt: []
+      m_Text_SetString:
+      - String: {fileID: 11400000, guid: 88c4131aa1989ba43b3329b5506ed70c, type: 2}
+        Value:
+          Selection: 1
+          Constant: 
+          Variable: {fileID: 11400000, guid: 2da2e7e6a36bfa1449d7f1412f24266f, type: 2}
       m_Text_PrintLog: []
-      m_UI_GoTo:
-      - Manager: {fileID: 11400000, guid: 5f5f25823887fd243896f2ddf13b1b77, type: 2}
-        Page: {fileID: 1052657771721792, guid: 6b06aeda17d39bc468791ff6ceb4fb40, type: 2}
+      m_UI_GoTo: []
       m_UI_GoBack: []

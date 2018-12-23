@@ -14,7 +14,7 @@ namespace Shimmer.Common.Conditions.Variable
 			}
 		}
 
-		public IVariable Variable;
+		public Variables.Variable Variable;
 
 		public override bool Evaluate()
 		{

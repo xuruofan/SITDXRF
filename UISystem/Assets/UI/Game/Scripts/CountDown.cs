@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using Shimmer.Common.Actions;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Shimmer.UI.Game
@@ -9,7 +9,7 @@ namespace Shimmer.UI.Game
 		public int CountdownTime;
 		public Text TimerText;
 		public float DelayActionInSeconds;
-		public UnityEvent OnCountdownFinished;
+		public ActionList OnCountdownFinished;
 
 		private float m_remainingTime;
 		
@@ -34,7 +34,7 @@ namespace Shimmer.UI.Game
 
 		void OnEvent()
 		{
-			OnCountdownFinished.Invoke();
+			OnCountdownFinished.Execute();
 		}
 	}
 }

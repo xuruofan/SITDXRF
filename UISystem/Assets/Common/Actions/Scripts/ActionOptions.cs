@@ -11,6 +11,7 @@ namespace Shimmer.Common.Actions
 		// Variable
 		public Variable.SetInt[] m_Variable_SetInt;
 		// Text
+		public Text.SetString[] m_Text_SetString;
 		public Text.PrintLog[] m_Text_PrintLog;
 		//UI
 		public UI.GoTo[] m_UI_GoTo;

@@ -1,11 +1,12 @@
-﻿using System;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace Shimmer.Common.Variables
 {
     public class ResettableScriptableObject : ScriptableObject
     {
+		public bool Reset;
+
         private void OnEnable()
         {
             EditorApplication.playModeStateChanged += OnPlayModeStateChangedChanged;
@@ -13,7 +14,7 @@ namespace Shimmer.Common.Variables
 
         private void OnPlayModeStateChangedChanged(PlayModeStateChange obj)
         {
-            if (obj == PlayModeStateChange.ExitingPlayMode)
+            if (Reset && obj == PlayModeStateChange.ExitingPlayMode)
             {
                 Resources.UnloadAsset(this);
             }
