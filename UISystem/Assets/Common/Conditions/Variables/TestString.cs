@@ -1,7 +1,7 @@
 ﻿using Shimmer.Common.Variables;
 using System;
 
-namespace Shimmer.Common.Conditions.Variable
+namespace Shimmer.Common.Conditions.Variables
 {
 	[Serializable]
 	public class TestString : Condition
@@ -10,7 +10,7 @@ namespace Shimmer.Common.Conditions.Variable
 		{
 			get
 			{
-				return "Variable/Test string";
+				return "Variables/Test string";
 			}
 		}
 

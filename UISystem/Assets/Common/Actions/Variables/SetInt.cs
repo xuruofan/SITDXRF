@@ -2,7 +2,7 @@
 using Shimmer.Common.Variables;
 using UnityEngine.Assertions;
 
-namespace Shimmer.Common.Actions.Variable
+namespace Shimmer.Common.Actions.Variables
 {
 	[Serializable]
 	public class SetInt : Action
@@ -14,7 +14,7 @@ namespace Shimmer.Common.Actions.Variable
 		{
 			get
 			{
-				return "Variable/SetInt";
+				return "Variables/Set int";
 			}
 		}
 

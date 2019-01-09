@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3a93ee7657e54d419319f5818d4f3ac, type: 3}
-  m_Name: F_GameStateChanged_Countdown
+  m_Name: F_GameStateChanged_Ended
   m_EditorClassIdentifier: 
   Reset: 0
   m_Value:
@@ -30,5 +30,5 @@ MonoBehaviour:
         B:
           Selection: 1
           Constant: 
-          Variable: {fileID: 11400000, guid: 2da2e7e6a36bfa1449d7f1412f24266f, type: 2}
+          Variable: {fileID: 11400000, guid: d89785327c593e9409c35fa41c4e0648, type: 2}
     Operator: 1

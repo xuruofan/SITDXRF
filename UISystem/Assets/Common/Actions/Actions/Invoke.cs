@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.Assertions;
 
-namespace Shimmer.Common.Actions.Execution
+namespace Shimmer.Common.Actions.Actions
 {
 	[Serializable]
 	public class Invoke : Action
@@ -12,7 +12,7 @@ namespace Shimmer.Common.Actions.Execution
 		{
 			get
 			{
-				return "Execution/Invoke";
+				return "Actions/Invoke";
 			}
 		}
 

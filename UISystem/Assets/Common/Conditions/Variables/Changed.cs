@@ -1,7 +1,7 @@
 ﻿using Shimmer.Common.Variables;
 using System;
 
-namespace Shimmer.Common.Conditions.Variable
+namespace Shimmer.Common.Conditions.Variables
 {
 	[Serializable]
 	public class Changed : Condition
@@ -10,11 +10,11 @@ namespace Shimmer.Common.Conditions.Variable
 		{
 			get
 			{
-				return "Variable/Changed";
+				return "Variables/Changed";
 			}
 		}
 
-		public Variables.Variable Variable;
+		public Variable Variable;
 
 		public override bool Evaluate()
 		{

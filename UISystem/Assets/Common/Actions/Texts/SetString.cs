@@ -1,9 +1,8 @@
 ﻿using Shimmer.Common.Variables;
 using System;
-using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Shimmer.Common.Actions.Text
+namespace Shimmer.Common.Actions.Texts
 {
 	[Serializable]
 	public class SetString : Action
@@ -15,7 +14,7 @@ namespace Shimmer.Common.Actions.Text
 		{
 			get
 			{
-				return "Text/Set string";
+				return "Texts/Set string";
 			}
 		}
 

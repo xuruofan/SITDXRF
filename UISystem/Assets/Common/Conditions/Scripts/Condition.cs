@@ -15,8 +15,6 @@ namespace Shimmer.Common.Conditions
 	[Serializable]
 	public class ConditionList : ReorderableList<ConditionOptions>
 	{
-		public delegate void Callback(bool _result);
-
 		public enum OperatorSelection
 		{
 			Or,
@@ -36,8 +34,8 @@ namespace Shimmer.Common.Conditions
 
 		public void Disable()
 		{
-			m_Callback = null;
 			Unsubscribe();
+			m_Callback = null;
 		}
 
 		private void Subscribe()
@@ -47,7 +45,7 @@ namespace Shimmer.Common.Conditions
 				Condition condition = item;
 				if (condition != null)
 				{
-					condition.Subscribe(OnConditionChanged);
+					condition.Subscribe(m_Callback);
 				}
 			}
 		}
@@ -59,24 +57,12 @@ namespace Shimmer.Common.Conditions
 				Condition condition = item;
 				if (condition != null)
 				{
-					condition.Unsubscribe(OnConditionChanged);
+					condition.Unsubscribe(m_Callback);
 				}
 			}
 		}
 
-		private void OnConditionChanged()
-		{
-			try
-			{
-				m_Callback(Evaluate());
-			}
-			catch (Exception e)
-			{
-				Debug.LogError($"Exception in Event: {e.Message}");
-			}
-		}
-
-		private bool Evaluate()
+		public bool Evaluate()
 		{
 			switch (Operator)
 			{

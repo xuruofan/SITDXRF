@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -15,13 +15,16 @@ MonoBehaviour:
   m_Value:
     Items:
     - m_Execution_Invoke: []
+      m_Execution_EnableComponent: []
+      m_Execution_Pause: []
       m_Variable_SetInt: []
-      m_Text_SetString:
+      m_Texts_SetText: []
+      m_Texts_SetString:
       - String: {fileID: 11400000, guid: 88c4131aa1989ba43b3329b5506ed70c, type: 2}
         Value:
           Selection: 1
           Constant: 
           Variable: {fileID: 11400000, guid: 2da2e7e6a36bfa1449d7f1412f24266f, type: 2}
-      m_Text_PrintLog: []
+      m_Texts_PrintLog: []
       m_UI_GoTo: []
       m_UI_GoBack: []

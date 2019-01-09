@@ -7,9 +7,10 @@ namespace Shimmer.Common.Conditions
 	public class ConditionOptions : Options<Condition>
 	{
 		// Event
-		public Situation.OnEnable[] m_Situation_OnEnable;
+		public Conditions.Check[] m_Conditions_Check;
+		public Conditions.OnEnable[] m_Conditions_OnEnable;
 		// Variable
-		public Variable.Changed[] m_Variable_Changed;
-		public Variable.TestString[] m_Variable_TestString;
+		public Variables.Changed[] m_Variable_Changed;
+		public Variables.TestString[] m_Variable_TestString;
 	}
 }

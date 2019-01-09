@@ -98,7 +98,9 @@ namespace Shimmer.Tools.Editor
 
 		public override void OnGUI(Rect _position, SerializedProperty _property, GUIContent _label)
 		{
-			m_Label = EditorGUI.BeginProperty(_position, _label, _property);
+			EditorGUI.BeginProperty(_position, _label, _property);
+			m_Label = new GUIContent(_property.name);	// using _property.name as _label somehow changes to "Operator" for ConditonList
+
 			EditorGUI.BeginChangeCheck();
 
 			var prop = _property.Copy();

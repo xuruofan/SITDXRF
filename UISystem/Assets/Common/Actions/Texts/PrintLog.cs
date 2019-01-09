@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Shimmer.Common.Actions.Text
+namespace Shimmer.Common.Actions.Texts
 {
 	[Serializable]
 	public class PrintLog : Action
@@ -12,7 +12,7 @@ namespace Shimmer.Common.Actions.Text
 		{
 			get
 			{
-				return "Text/Print log";
+				return "Texts/Print log";
 			}
 		}
 

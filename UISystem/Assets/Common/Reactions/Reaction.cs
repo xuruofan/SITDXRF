@@ -6,24 +6,29 @@ namespace Shimmer.Common.Reactions
 {
 	public class Reaction : MonoBehaviour
 	{
-		public ConditionList Conditions;
-		public ActionList Actions;
+		public ConditionList If;
+		public ActionList Do;
+		public ActionList Else;
 
 		private void OnEnable()
 		{
-			Conditions.Enable(OnConditionSatisfied);
+			If.Enable(OnStateChanged);
 		}
 
 		private void OnDisable()
 		{
-			Conditions.Disable();
+			If.Disable();
 		}
 
-		private void OnConditionSatisfied(bool _satisfied)
+		private void OnStateChanged()
 		{
-			if (_satisfied)
+			if (If.Evaluate())
 			{
-				Actions.Execute();
+				Do.Execute();
+			}
+			else
+			{
+				Else.Execute();
 			}
 		}
 	}
