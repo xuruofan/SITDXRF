@@ -1,40 +1,50 @@
 ﻿using Shimmer.Common.Variables;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Shimmer.Game.GameLogic
 {
-	public class InputController : MonoBehaviour
+	public class InputController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 	{
-		public FloatReference PlayerHeight;
+		public delegate void OnPointerHoldBeginEvent(Vector2 _position);
+		public delegate void OnPointerHoldEndEvent(Vector2 _position);
 
-		// Use this for initialization
-		void Start()
+		public float OnHoldThreshold;
+
+		public OnPointerHoldBeginEvent OnPointerHoldBegin;
+		public OnPointerHoldEndEvent OnPointerHoldEnd;
+
+		private float m_PressedTime;
+		private bool m_Pressed;
+		private Vector2 m_Position;
+
+		private void Awake()
 		{
+			m_PressedTime = 0;	
 		}
 
-		// Update is called once per frame
-		void Update()
+		private void Update()
 		{
-			Vector3 pos = gameObject.transform.position;
+			if (m_Pressed)
+			{
+				m_PressedTime += Time.deltaTime;
 
-			if (Input.GetKey("up"))
-			{
-				pos.y += 0.1f;
+				if (m_PressedTime > OnHoldThreshold)
+				{
+					OnPointerHoldEnd?.Invoke(m_Position);
+				}
 			}
-			else if (Input.GetKey("down"))
-			{
-				pos.y -= 0.1f;
-			}
-			else if (Input.GetKey("left"))
-			{
-				pos.x -= 0.1f;
-			}
-			else if (Input.GetKey("right"))
-			{
-				pos.x += 0.1f;
-			}
-			gameObject.transform.position = pos;
-			PlayerHeight.SetValue(pos.y);
+		}
+
+		public void OnPointerDown(PointerEventData eventData)
+		{
+			m_Pressed = true;
+			m_PressedTime = 0;		
+		}
+
+		public void OnPointerUp(PointerEventData eventData)
+		{
+			m_Pressed = false;
 		}
 	}
 }
