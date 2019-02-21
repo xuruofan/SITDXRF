@@ -4,47 +4,40 @@ using UnityEngine.EventSystems;
 
 namespace Shimmer.Game.GameLogic
 {
+	public enum InputPhase
+	{
+		None, Begin, Hold, End
+	}
+
 	public class InputController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 	{
-		public delegate void OnPointerHoldBeginEvent(Vector2 _position);
-		public delegate void OnPointerHoldEndEvent(Vector2 _position);
-
-		public float OnHoldThreshold;
-
-		public OnPointerHoldBeginEvent OnPointerHoldBegin;
-		public OnPointerHoldEndEvent OnPointerHoldEnd;
-
-		private float m_PressedTime;
-		private bool m_Pressed;
-		private Vector2 m_Position;
-
+		public IntVariable Phase;
+		public Vector2Variable Position;
+		
 		private void Awake()
 		{
-			m_PressedTime = 0;	
+			Phase.SetValue((int)InputPhase.None);
 		}
 
-		private void Update()
+		public void OnPointerDown(PointerEventData _eventData)
 		{
-			if (m_Pressed)
+			Phase.SetValue((int)InputPhase.Begin);
+			Position.SetValue(_eventData.position);
+		}
+
+		public void OnPointerUp(PointerEventData _eventData)
+		{
+			Phase.SetValue((int)InputPhase.End);
+			Position.SetValue(_eventData.position);
+		}
+
+		private void OnMouseDrag()
+		{
+			if (Phase.GetValue() == (int)InputPhase.Begin)
 			{
-				m_PressedTime += Time.deltaTime;
-
-				if (m_PressedTime > OnHoldThreshold)
-				{
-					OnPointerHoldEnd?.Invoke(m_Position);
-				}
+				Phase.SetValue((int)InputPhase.Hold);
 			}
-		}
-
-		public void OnPointerDown(PointerEventData eventData)
-		{
-			m_Pressed = true;
-			m_PressedTime = 0;		
-		}
-
-		public void OnPointerUp(PointerEventData eventData)
-		{
-			m_Pressed = false;
+			Position.SetValue(Input.mousePosition);
 		}
 	}
 }
