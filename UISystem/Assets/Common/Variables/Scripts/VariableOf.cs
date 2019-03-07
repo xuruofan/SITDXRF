@@ -17,6 +17,11 @@ namespace Shimmer.Common.Variables
 		{
 			Changed.Unsubscribe(_callback);
 		}
+
+		public bool HasSubscribed(Callback _callback)
+		{
+			return Changed.HasSubscribed(_callback);
+		}
 	}
 
 	public abstract class VariableOf<T> : Variable, IVariableOf<T>

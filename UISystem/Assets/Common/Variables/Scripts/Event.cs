@@ -69,5 +69,13 @@ namespace Shimmer.Common.Variables
                 m_listeners[_callback] = count - 1;
             }
         }
+
+		public bool HasSubscribed(Callback _callback)
+		{
+			int count;
+			bool found = m_listeners.TryGetValue(_callback, out count);
+
+			return found && count > 0;
+		}
     }
 }
