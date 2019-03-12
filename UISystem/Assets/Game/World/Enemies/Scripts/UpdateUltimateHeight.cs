@@ -1,7 +1,7 @@
 ﻿using Shimmer.Common.Variables;
 using UnityEngine;
 
-namespace Shimmer.Game.World
+namespace Shimmer.Game.World.Enemies
 {
 	public class UpdateUltimateHeight : MonoBehaviour
 	{

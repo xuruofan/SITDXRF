@@ -1,7 +1,7 @@
 ﻿using Shimmer.Common.Variables;
 using UnityEngine;
 
-namespace Shimmer.Game.World
+namespace Shimmer.Game.World.Segments
 {
 	[RequireComponent(typeof(Collider2D))]
 	public class GenerateNextSegment : MonoBehaviour
@@ -14,6 +14,7 @@ namespace Shimmer.Game.World
 			if(collision.gameObject.tag == "Player")
 			{
 				PrefabList prefabs = Prefabs.GetValue();
+
 				Random.Range(0, prefabs.Items.Length);
 				GameObject nextSegObject = Instantiate<GameObject>(prefabs.Items[Random.Range(0, prefabs.Items.Length)]);
 				nextSegObject.transform.position = NextSpawnPoint.position;

@@ -1,7 +1,7 @@
 ﻿using Shimmer.Common.Variables;
 using UnityEngine;
 
-namespace Shimmer.Game.World
+namespace Shimmer.Game.World.Pickups
 {
 	public class SparkController : MonoBehaviour
 	{

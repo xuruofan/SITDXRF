@@ -3,16 +3,17 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0934640800ab4b4b9c44e888450f474, type: 3}
-  m_Name: V_Game_World_Segments
+  m_Name: V_Game_World_Segments_Level1
   m_EditorClassIdentifier: 
   Reset: 0
   m_Value:
     Items:
-    - {fileID: 1757667308814430, guid: 1b0cb2f6293241b4fb38546ab6ce645d, type: 2}
-    - {fileID: 1757667308814430, guid: 75e6224355199794d92b3545f0d9352a, type: 2}
+    - {fileID: 1757667308814430, guid: 1b0cb2f6293241b4fb38546ab6ce645d, type: 3}
+    - {fileID: 1757667308814430, guid: 75e6224355199794d92b3545f0d9352a, type: 3}

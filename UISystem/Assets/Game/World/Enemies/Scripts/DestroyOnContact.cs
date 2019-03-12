@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Shimmer.Game.World
+namespace Shimmer.Game.World.Enemies
 {
 	public class DestroyOnContact : MonoBehaviour
 	{
