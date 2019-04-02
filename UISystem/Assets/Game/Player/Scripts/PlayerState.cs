@@ -1,5 +1,6 @@
 ﻿using System;
 using Shimmer.Common.Variables;
+using Shimmer.Game.GameLogic;
 using Shimmer.Game.InputControl;
 using Shimmer.Tools;
 using UnityEngine;
@@ -63,21 +64,27 @@ namespace Shimmer.Game.Player
 
 		private void OnCollide(Collision2D _collision)
 		{
-			string colliderName = _collision.otherCollider.gameObject.name;
-			switch (colliderName)
+			Vector2 oldVelocity = m_Player.LastVelocity;
+			Vector2 newVelocity = m_PlayerBody.velocity;
+
+			bool xDirectionOld = oldVelocity.x > 0;
+			bool xDirectionNew = newVelocity.x > 0;
+
+			bool hitTop = oldVelocity.y > 0 && newVelocity.y < 0;
+			bool hitHorizontal = xDirectionNew == xDirectionOld ||  // Traveling in same x direction
+				oldVelocity.x == 0 && oldVelocity.y < 0;    // Traveling vertically downwards
+
+			if (hitTop)
 			{
-				case "Collider_Top":
-					m_Animator.SetTrigger("tCollideTop");
-					break;
-				case "Collider_Bottom":
-					m_Animator.SetTrigger("tCollideHorizontally");
-					break;
-				case "Collider_Left":
-				case "Collider_Right":
-					m_Animator.SetTrigger("tCollideVertically");
-					break;
-				default:
-					break;
+				m_Animator.SetTrigger("tCollideTop");
+			}
+			else if (hitHorizontal)	
+			{
+				m_Animator.SetTrigger("tCollideHorizontally");
+			}
+			else
+			{
+				m_Animator.SetTrigger("tCollideVertically");
 			}
 		}
 

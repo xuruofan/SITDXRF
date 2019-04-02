@@ -8,7 +8,7 @@ namespace Shimmer.Game.Player
 		{
 			base.OnStateUpdate(_animator, _animatorStateInfo, _layerIndex);
 			
-			if (m_PlayerBody.velocity.y <= 0)
+			if (m_PlayerBody.velocity.y < -float.Epsilon)
 			{
 				_animator.SetTrigger("tDown");
 			}
