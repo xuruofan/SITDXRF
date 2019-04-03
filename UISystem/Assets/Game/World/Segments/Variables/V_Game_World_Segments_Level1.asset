@@ -15,5 +15,4 @@ MonoBehaviour:
   Reset: 0
   m_Value:
     Items:
-    - {fileID: 1757667308814430, guid: 1b0cb2f6293241b4fb38546ab6ce645d, type: 3}
-    - {fileID: 1757667308814430, guid: 75e6224355199794d92b3545f0d9352a, type: 3}
+    - {fileID: 7667717603594348911, guid: f989a8c3356421444ab880da84691d14, type: 3}

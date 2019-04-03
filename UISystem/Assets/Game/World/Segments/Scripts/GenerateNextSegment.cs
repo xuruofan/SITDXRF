@@ -15,7 +15,6 @@ namespace Shimmer.Game.World.Segments
 			{
 				PrefabList prefabs = Prefabs.GetValue();
 
-				Random.Range(0, prefabs.Items.Length);
 				GameObject nextSegObject = Instantiate<GameObject>(prefabs.Items[Random.Range(0, prefabs.Items.Length)]);
 				nextSegObject.transform.position = NextSpawnPoint.position;
 				bool bFlip = Random.Range(0, 2) == 1;

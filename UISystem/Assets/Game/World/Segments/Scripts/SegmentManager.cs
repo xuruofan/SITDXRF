@@ -15,19 +15,21 @@ namespace Shimmer.Game.World.Segments
 		{
 			Assert.IsNotNull(AllSegments);
 			Assert.IsNotNull(SegmentsForNow);
+
+			SetupSegments();
 		}
 
 		private void OnEnable()
 		{
-			CurrentDifficulty.Subscribe(OnDifficultyChanged);
+			CurrentDifficulty.Subscribe(SetupSegments);
 		}
 
 		private void OnDisable()
 		{
-			CurrentDifficulty.Unsubscribe(OnDifficultyChanged);
+			CurrentDifficulty.Unsubscribe(SetupSegments);
 		}
 
-		private void OnDifficultyChanged()
+		private void SetupSegments()
 		{
 			var levels = AllSegments.GetValue().Levels;
 			int numLevels = levels.Length;
