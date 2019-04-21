@@ -7,6 +7,8 @@ namespace Shimmer.Game.Player
 	{
 		public override void OnStateEnter(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
 		{
+			Debug.Log("Enter Vertical Jump State");
+
 			base.OnStateEnter(_animator, _stateInfo, _layerIndex);
 
 			m_PlayerBody.bodyType = RigidbodyType2D.Static;
@@ -14,6 +16,8 @@ namespace Shimmer.Game.Player
 
 		public override void OnStateExit(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
 		{
+			Debug.Log("Exit Vertical Jump State.");
+
 			m_PlayerBody.bodyType = RigidbodyType2D.Dynamic;
 
 			// Flip image

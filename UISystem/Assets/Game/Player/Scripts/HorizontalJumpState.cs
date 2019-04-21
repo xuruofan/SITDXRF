@@ -6,6 +6,8 @@ namespace Shimmer.Game.Player
 	{
 		public override void OnStateEnter(Animator _animator, AnimatorStateInfo _animatorStateInfo, int _layerIndex)
 		{
+			Debug.Log("Enter Horizontal Jump State.");
+
 			base.OnStateEnter(_animator, _animatorStateInfo, _layerIndex);
 
 			m_PlayerBody.bodyType = RigidbodyType2D.Static;
@@ -13,6 +15,9 @@ namespace Shimmer.Game.Player
 
 		public override void OnStateExit(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
 		{
+			Debug.Log("Exit Horizontal Jump State.");
+
+
 			m_PlayerBody.bodyType = RigidbodyType2D.Dynamic;
 
 			Vector2 newVelocity;

@@ -17,6 +17,9 @@ namespace Shimmer.Common.Actions
 		public Texts.SetText[] m_Texts_SetText;
 		public Texts.SetString[] m_Texts_SetString;
 		public Texts.PrintLog[] m_Texts_PrintLog;
+		// Visuals
+		public Visuals.Flip[] m_Visuals_Flip;
+		public Visuals.SetAnimationTrigger[] m_Visuals_SetAnimationTrigger;
 		//UI
 		public UI.GoTo[] m_UI_GoTo;
 		public UI.GoBack[] m_UI_GoBack;

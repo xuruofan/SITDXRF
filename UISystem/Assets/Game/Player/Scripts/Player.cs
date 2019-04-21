@@ -10,12 +10,26 @@ namespace Shimmer.Game.Player
 	public class Player : MonoBehaviour
 	{
 		public delegate void OnCollisionEnterEvent(Collision2D _collision);
-		
+		public delegate void OnCollisionExitEvent(Collision2D _collision);
+
 		public InputController InputController;
 		[SerializeField]
 		public GameObject Visual;
 
-		public FloatReference Charge;
+		public float Charge
+		{
+			get { return m_Charge; }
+			private set
+			{
+				m_Charge = value;
+
+				ChargeValue.SetValue(value);
+			}
+		}
+
+		private float m_Charge;
+
+		public FloatReference ChargeValue;
 		public FloatVariable Height;
 
 		public bool IsFacingRight
@@ -47,10 +61,13 @@ namespace Shimmer.Game.Player
 		[SerializeField]
 		private FloatReference MaxYSpeed;
 		public FloatReference MaxCharge;
+		public FloatReference DefaultCharge;
 
 		public OnCollisionEnterEvent OnCollisionEntered;
+		public OnCollisionExitEvent OnCollisionExited;
 
 		private Rigidbody2D m_Body = null;
+		
 
 		public float MAX_X_SPEED 
 		{
@@ -74,7 +91,7 @@ namespace Shimmer.Game.Player
 
 			Assert.IsNotNull(m_Body, "Rigidbody2D is not found on player gameobject!");
 
-			Charge.SetValue(MaxCharge.GetValue());
+			Charge = DefaultCharge.GetValue();
 		}
 
 		private void Update()
@@ -92,8 +109,21 @@ namespace Shimmer.Game.Player
 
 		public void CollectSpark()
 		{
-			float currentCharge = Charge.GetValue();
-			Charge.SetValue(currentCharge + 1.0f);
+			float amount = Charge + 1.0f;
+
+			Charge = Mathf.Clamp(amount, 0, MaxCharge.GetValue());
+		}
+
+		public void SpendCharge(float _amount)
+		{
+			float amount = Charge - _amount;
+
+			Charge = Mathf.Clamp(amount, 0, MaxCharge.GetValue());
+		}
+
+		public void ResetCharge()
+		{
+			Charge = DefaultCharge.GetValue();
 		}
 
 		private void OnCollisionEnter2D(Collision2D _collision)
@@ -105,6 +135,8 @@ namespace Shimmer.Game.Player
 
 		private void OnCollisionExit2D(Collision2D _collision)
 		{
+			OnCollisionExited?.Invoke(_collision);
+
 			m_IsColliding = false;
 		}
 	}

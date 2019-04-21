@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputController: {fileID: 0}
   Visual: {fileID: 5777760337672675720}
-  Charge:
+  ChargeValue:
     Selection: 1
     Constant: 0
     Variable: {fileID: 11400000, guid: bb040f33e1a883d4b9afffb864acd27d, type: 2}
@@ -66,6 +66,10 @@ MonoBehaviour:
     Selection: 1
     Constant: 0
     Variable: {fileID: 11400000, guid: de21c5f50bbfd784cb8c191a52ecac6b, type: 2}
+  DefaultCharge:
+    Selection: 1
+    Constant: 0
+    Variable: {fileID: 11400000, guid: ee565cada93a00f4caee517d483eaf39, type: 2}
 --- !u!50 &5777760337672675724
 Rigidbody2D:
   serializedVersion: 4
@@ -141,7 +145,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 287208105
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300008, guid: a11ec2dec771fab4cbb158fd67e8e543, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

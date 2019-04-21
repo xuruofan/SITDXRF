@@ -14,17 +14,19 @@ namespace Shimmer.Game.Player
 		protected Rigidbody2D m_PlayerBody;
 		protected Animator m_Animator;
 		protected InputController m_InputController;
+		protected bool m_IsLeaving;
 
 		public override void OnStateEnter(Animator _animator, AnimatorStateInfo _animatorStateInfo, int _layerIndex)
 		{
 			base.OnStateEnter(_animator, _animatorStateInfo, _layerIndex);
+
+			m_IsLeaving = false;
 
 			m_Animator = _animator;
 			m_Player = _animator.gameObject.GetComponent<Player>();
 			m_PlayerBody = m_Player.gameObject.GetComponent<Rigidbody2D>();
 			m_InputController = m_Player.InputController;
 
-			m_Player.OnCollisionEntered += OnCollide;
 			m_InputController.Phase.Subscribe(HandleInput);
 		}
 
@@ -32,10 +34,7 @@ namespace Shimmer.Game.Player
 		{
 			base.OnStateExit(_animator, _animatorStateInfo, _layerIndex);
 
-			if (m_Player)
-			{
-				m_Player.OnCollisionEntered -= OnCollide;
-			}
+			LeaveState();
 
 			if (m_InputController != null)
 			{
@@ -47,6 +46,11 @@ namespace Shimmer.Game.Player
 		{
 			base.OnStateUpdate(animator, stateInfo, layerIndex);
 			
+			if (m_PlayerBody.bodyType == RigidbodyType2D.Static)
+			{
+				return;
+			}
+			
 			// Keep horizontal speed constant and vertical speed within a limit
 			float yVelocity = m_PlayerBody.velocity.y;
 			float xVelocity = m_PlayerBody.velocity.x;
@@ -57,12 +61,18 @@ namespace Shimmer.Game.Player
 			}
 
 			m_PlayerBody.velocity = new Vector2(xVelocity, yVelocity);
-			
+
+			Vector3 upVector = m_Player.Visual.transform.up;
+			if (Vector3.up != upVector)
+			{
+				m_Player.Visual.transform.up = Vector3.RotateTowards(upVector, Vector3.up, Time.deltaTime, 0.0f);
+			}
+
 			// Keep angular 0
 			m_PlayerBody.angularVelocity = 0;
 		}
 
-		private void OnCollide(Collision2D _collision)
+		protected bool IsCollidingTop()
 		{
 			Vector2 oldVelocity = m_Player.LastVelocity;
 			Vector2 newVelocity = m_PlayerBody.velocity;
@@ -70,32 +80,51 @@ namespace Shimmer.Game.Player
 			bool xDirectionOld = oldVelocity.x > 0;
 			bool xDirectionNew = newVelocity.x > 0;
 
-			bool hitTop = oldVelocity.y > 0 && newVelocity.y < 0;
-			bool hitHorizontal = xDirectionNew == xDirectionOld ||  // Traveling in same x direction
-				oldVelocity.x == 0 && oldVelocity.y < 0;    // Traveling vertically downwards
+			return oldVelocity.y > 0 && newVelocity.y < 0;
+		}
 
-			if (hitTop)
+		protected bool IsCollidingHorizontal()
+		{
+			Vector2 newVelocity = m_PlayerBody.velocity;
+
+			if (newVelocity.y < 0)
 			{
-				m_Animator.SetTrigger("tCollideTop");
+				return false;
 			}
-			else if (hitHorizontal)	
-			{
-				m_Animator.SetTrigger("tCollideHorizontally");
-			}
-			else
-			{
-				m_Animator.SetTrigger("tCollideVertically");
-			}
+
+			Vector2 oldVelocity = m_Player.LastVelocity;
+
+			bool xDirectionOld = oldVelocity.x > 0;
+			bool xDirectionNew = newVelocity.x > 0;
+
+			return xDirectionNew == xDirectionOld ||  // Traveling in same x direction
+				oldVelocity.x == 0 && oldVelocity.y < 0;    // Traveling vertically downwards
 		}
 
 		protected virtual void HandleInput()
 		{
+			if (m_IsLeaving)
+			{
+				return;
+			}
+
 			switch((EInputPhase)m_InputController.Phase.GetValue())
 			{
 				case EInputPhase.Begin:
 					m_Animator.SetTrigger("tChase");
+					LeaveState();
 					break;
 			}
+		}
+
+		protected virtual void LeaveState()
+		{
+			if (m_IsLeaving)
+			{
+				return;
+			}
+
+			m_IsLeaving = true;
 		}
 	}
 }

@@ -1,13 +1,12 @@
-﻿using Shimmer.Common.Variables;
-using UnityEngine;
-
-namespace Shimmer.Game.World.Pickups
+﻿namespace Shimmer.Game.World.Pickups
 {
-	public class SparkController : MonoBehaviour
+	public class SparkController : PickupControllerBase
 	{
-		private void Update()
+		protected override void ApplyEffect(Player.Player _player)
 		{
-			gameObject.transform.Rotate(0, 0, -1);
+			base.ApplyEffect(_player);
+
+			_player.CollectSpark();
 		}
 	}
 }
