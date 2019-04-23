@@ -20,6 +20,7 @@ namespace Shimmer.Common.Actions
 		// Visuals
 		public Visuals.Flip[] m_Visuals_Flip;
 		public Visuals.SetAnimationTrigger[] m_Visuals_SetAnimationTrigger;
+		public Visuals.SetImageFill[] m_Visuals_SetImageFill;
 		//UI
 		public UI.GoTo[] m_UI_GoTo;
 		public UI.GoBack[] m_UI_GoBack;
