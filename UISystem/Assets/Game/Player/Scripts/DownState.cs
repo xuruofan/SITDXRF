@@ -32,15 +32,9 @@ namespace Shimmer.Game.Player
 			if (IsCollidingHorizontal())
 			{
 				m_Animator.SetTrigger("tCollideHorizontally");
-				Debug.Log($"Old velocity: {m_Player.LastVelocity.ToString()}");
-				Debug.Log($"New velocity: {m_PlayerBody.velocity.ToString()}");
+				
+				LeaveState();
 			}
-			else
-			{
-				m_Animator.SetTrigger("tFall");
-			}
-
-			LeaveState();
 		}
 	}
 }

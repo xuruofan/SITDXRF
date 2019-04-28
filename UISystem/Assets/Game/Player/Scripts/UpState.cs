@@ -47,7 +47,7 @@ namespace Shimmer.Game.Player
 			}
 			else
 			{
-				m_Animator.SetTrigger("tFall");
+				m_Animator.SetTrigger("tDown");
 			}
 
 			LeaveState();

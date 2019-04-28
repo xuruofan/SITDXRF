@@ -94,11 +94,14 @@ namespace Shimmer.Game.Player
 
 			Vector2 oldVelocity = m_Player.LastVelocity;
 
-			bool xDirectionOld = oldVelocity.x > 0;
-			bool xDirectionNew = newVelocity.x > 0;
+			//bool xDirectionOld = oldVelocity.x > 0;
+			//bool xDirectionNew = newVelocity.x > 0;
+			//bool yDirectionOld = oldVelocity.y > 0;
+			//bool yDirectionNew = newVelocity.y > 0;
 
-			return xDirectionNew == xDirectionOld ||  // Traveling in same x direction
-				oldVelocity.x == 0 && oldVelocity.y < 0;    // Traveling vertically downwards
+			//return xDirectionNew == xDirectionOld ||  // Traveling in same x direction
+			//	oldVelocity.x == 0 && oldVelocity.y < 0;    // Traveling vertically downwards
+			return oldVelocity.y < 0 && newVelocity.y > 0;
 		}
 
 		protected virtual void HandleInput()
