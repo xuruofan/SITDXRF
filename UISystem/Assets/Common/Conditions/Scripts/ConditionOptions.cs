@@ -12,5 +12,6 @@ namespace Shimmer.Common.Conditions
 		// Variable
 		public Variables.Changed[] m_Variable_Changed;
 		public Variables.TestString[] m_Variable_TestString;
+		public Variables.TestBool[] m_Variable_TestBool;
 	}
 }

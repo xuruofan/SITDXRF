@@ -1,5 +1,6 @@
 ﻿using Shimmer.UI.Common;
 using System;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Shimmer.Common.Actions.UI
@@ -17,7 +18,7 @@ namespace Shimmer.Common.Actions.UI
 			}
 		}
 
-		public override void Execute()
+		public override void Execute(MonoBehaviour _behaviour)
 		{
 			Assert.IsNotNull(Manager, "Please specify a UI manager!");
 			Manager.Back();

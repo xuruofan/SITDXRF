@@ -20,7 +20,7 @@ namespace Shimmer.Common.Actions.Actions
 			}
 		}
 
-		public override void Execute()
+		public override void Execute(MonoBehaviour _behaviour)
 		{
 			Assert.IsNotNull(GameObject, "GameObject to be activated is null!");
 

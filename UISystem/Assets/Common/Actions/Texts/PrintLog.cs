@@ -16,7 +16,7 @@ namespace Shimmer.Common.Actions.Texts
 			}
 		}
 
-		public override void Execute()
+		public override void Execute(MonoBehaviour _behaviour)
 		{
 			if (Log != null)
 			{

@@ -18,7 +18,7 @@ namespace Shimmer.Common.Actions.Visuals
 			}
 		}
 
-		public override void Execute()
+		public override void Execute(MonoBehaviour _behaviour)
 		{
 			Assert.IsNotNull(Animator, "Animator is null");
 			Assert.IsFalse(string.IsNullOrEmpty(Trigger), "Animation trigger is empty or null");

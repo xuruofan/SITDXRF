@@ -17,7 +17,7 @@ namespace Shimmer.Common.Actions.Actions
 			}
 		}
 
-		public override void Execute()
+		public override void Execute(MonoBehaviour _behaviour)
 		{
 			Time.timeScale = SetPause ? 0.0f : 1.0f;
 		}

@@ -1,5 +1,6 @@
 ﻿using System;
 using Shimmer.Common.Variables;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Shimmer.Common.Actions.Variables
@@ -18,7 +19,7 @@ namespace Shimmer.Common.Actions.Variables
 			}
 		}
 
-		public override void Execute()
+		public override void Execute(MonoBehaviour _behaviour)
 		{
 			Assert.IsNotNull(Variable, "Please set a Variable!");
 

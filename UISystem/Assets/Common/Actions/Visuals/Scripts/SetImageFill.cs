@@ -21,7 +21,7 @@ namespace Shimmer.Common.Actions.Visuals
 			}
 		}
 
-		public override void Execute()
+		public override void Execute(MonoBehaviour _behaviour)
 		{
 			Assert.IsNotNull(Image, "Please set an image");
 

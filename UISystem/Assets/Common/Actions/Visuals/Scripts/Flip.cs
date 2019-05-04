@@ -20,7 +20,7 @@ namespace Shimmer.Common.Actions.Visuals
 			}
 		}
 
-		public override void Execute()
+		public override void Execute(MonoBehaviour _behaviour)
 		{
 			Assert.IsNotNull(Object);
 

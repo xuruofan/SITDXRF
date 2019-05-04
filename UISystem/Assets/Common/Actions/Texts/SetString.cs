@@ -1,5 +1,6 @@
 ﻿using Shimmer.Common.Variables;
 using System;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Shimmer.Common.Actions.Texts
@@ -18,7 +19,7 @@ namespace Shimmer.Common.Actions.Texts
 			}
 		}
 
-		public override void Execute()
+		public override void Execute(MonoBehaviour _behaviour)
 		{
 			Assert.IsNotNull(String);
 

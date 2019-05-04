@@ -19,7 +19,7 @@ namespace Shimmer.Common.Actions.UI
 			}
 		}
 
-		public override void Execute()
+		public override void Execute(MonoBehaviour _behaviour)
 		{
 			Assert.IsNotNull(Manager, "Cannot go to a page without a manager!");
 			Assert.IsNotNull(Page, "Cannot got to a page without specifying a page!");

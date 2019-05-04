@@ -24,11 +24,11 @@ namespace Shimmer.Common.Reactions
 		{
 			if (If.Evaluate())
 			{
-				Do.Execute();
+				Do.Execute(this);
 			}
 			else
 			{
-				Else.Execute();
+				Else.Execute(this);
 			}
 		}
 	}

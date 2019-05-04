@@ -6,13 +6,13 @@ namespace Shimmer.Common.Actions
 {
 	public abstract class Action
 	{
-		public abstract void Execute();
+		public abstract void Execute(MonoBehaviour _behaviour);
 	}
 
 	[Serializable]
 	public class ActionList : ReorderableList<ActionOptions>
 	{
-		public void Execute()
+		public void Execute(MonoBehaviour _behaviour)
 		{
 			if (Items != null)
 			{
@@ -23,7 +23,7 @@ namespace Shimmer.Common.Actions
 					{
 						try
 						{
-							action.Execute();
+							action.Execute(_behaviour);
 						}
 						catch (Exception e)
 						{
