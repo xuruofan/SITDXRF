@@ -24,7 +24,7 @@ namespace Shimmer.Game.World.Pickups
 
 		protected virtual void ApplyEffect(Player.Player _player)
 		{
-			OnCollected.Execute();
+			OnCollected.Execute(this);
 		}
 	}
 }
