@@ -31,7 +31,7 @@ namespace Shimmer.UI.Common
 
 		private void OnClick()
 		{
-			OnButtonClick.Execute();
+			OnButtonClick.Execute(this);
 		}
 	}
 }

@@ -18,12 +18,12 @@ namespace Shimmer.UI.Common
 		public void EnablePage()
 		{
 			gameObject.SetActive(true);
-			OnEnabled.Execute();
+			OnEnabled.Execute(this);
 		}
 
 		public void DisablePage()
 		{
-			OnDisabled.Execute();
+			OnDisabled.Execute(this);
 			Invoke("DelayDisable", DelayDisableInSeconds);	
 		}
 
