@@ -34,7 +34,7 @@ namespace Shimmer.UI.Game
 
 		void OnEvent()
 		{
-			OnCountdownFinished.Execute();
+			OnCountdownFinished.Execute(this);
 		}
 	}
 }
