@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Manager: {fileID: 11400000, guid: ffdbbf6c868e2134088de06d839676c4, type: 2}
-  DelayDisableInSeconds: 1
+  DelayDisableInSeconds: 0
   OnEnabled:
     Items:
     - m_Actions_Invoke: []
@@ -235,6 +235,7 @@ MonoBehaviour:
       m_UI_GoTo: []
       m_UI_GoBack: []
       m_UI_LoadScene: []
+      m_UI_UnloadScene: []
     - m_Actions_Invoke: []
       m_Actions_Delay: []
       m_Actions_ActivateGameObject: []
@@ -258,6 +259,7 @@ MonoBehaviour:
       m_UI_GoTo: []
       m_UI_GoBack: []
       m_UI_LoadScene: []
+      m_UI_UnloadScene: []
     - m_Actions_Invoke: []
       m_Actions_Delay: []
       m_Actions_ActivateGameObject: []
@@ -277,6 +279,7 @@ MonoBehaviour:
       m_UI_GoTo: []
       m_UI_GoBack: []
       m_UI_LoadScene: []
+      m_UI_UnloadScene: []
     - m_Actions_Invoke:
       - Actions: {fileID: 11400000, guid: 59d60b526c7097542a0355fc146375ac, type: 2}
       m_Actions_Delay: []
@@ -295,6 +298,7 @@ MonoBehaviour:
       m_UI_GoTo: []
       m_UI_GoBack: []
       m_UI_LoadScene: []
+      m_UI_UnloadScene: []
   OnDisabled:
     Items: []
 --- !u!114 &114073157495727272
@@ -1259,6 +1263,7 @@ MonoBehaviour:
       m_UI_GoTo: []
       m_UI_GoBack: []
       m_UI_LoadScene: []
+      m_UI_UnloadScene: []
     - m_Actions_Invoke: []
       m_Actions_Delay: []
       m_Actions_ActivateGameObject: []
@@ -1278,6 +1283,7 @@ MonoBehaviour:
       m_UI_GoTo: []
       m_UI_GoBack: []
       m_UI_LoadScene: []
+      m_UI_UnloadScene: []
 --- !u!1 &1583176066475862
 GameObject:
   m_ObjectHideFlags: 0

@@ -45,27 +45,6 @@ namespace Shimmer.UI.Common
         {
             Assert.IsNotNull(_pagePrefab, "Prefab is null!");
 
-            // If the page already exists in the stack, pop all the pages on top of it to avoid cycles
-            int foundIndex = -1;
-            for (int i = 0; i < Pages.Count; i++)
-            {
-                if (Pages[i].name.StartsWith(_pagePrefab.name))
-                {
-                    foundIndex = i;
-                    break;
-                }
-            }
-            if (foundIndex != -1)
-            {
-                for (int i = Pages.Count - 1; i > foundIndex; i--)
-                {
-                    PopPage();
-                }
-                var page = Pages[foundIndex].GetComponent<Page>();
-                page.EnablePage();
-                return;
-            }
-
             // Disable the previous page if there is any
             if (Pages.Count > 0)
             {
@@ -74,8 +53,32 @@ namespace Shimmer.UI.Common
                 previousPage.DisablePage();
             }
 
-            // Spawn new page
-            var newPageObject = Instantiate(_pagePrefab, GameObject.Find("Canvas").transform);
+			// If the page already exists in the stack, pop all the pages on top of it to avoid cycles
+			int foundIndex = -1;
+			for (int i = 0; i < Pages.Count; i++)
+			{
+				if (Pages[i].name.StartsWith(_pagePrefab.name))
+				{
+					foundIndex = i;
+					break;
+				}
+			}
+			if (foundIndex != -1)
+			{
+				for (int i = Pages.Count - 1; i > foundIndex; i--)
+				{
+					var previousPage = Pages[i].GetComponent<Page>();
+					GameObject.Destroy(Pages[i], previousPage.DelayDisableInSeconds);
+					Pages.RemoveAt(Pages.Count - 1);
+				}
+
+				var page = Pages[foundIndex].GetComponent<Page>();
+				page.EnablePage();
+				return;
+			}
+
+			// Spawn new page
+			var newPageObject = Instantiate(_pagePrefab, GameObject.Find("Canvas").transform);
             var newPage = newPageObject.GetComponent<Page>();
             Assert.IsNotNull(newPage, "Object does not contain a Page component!");
 

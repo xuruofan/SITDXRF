@@ -3,6 +3,7 @@ using Shimmer.Common.Variables;
 using Shimmer.Game.GameLogic;
 using Shimmer.Game.InputControl;
 using Shimmer.Tools;
+using Shimmer.UI.Common;
 using UnityEngine;
 
 namespace Shimmer.Game.Player
@@ -25,7 +26,7 @@ namespace Shimmer.Game.Player
 			m_Animator = _animator;
 			m_Player = _animator.gameObject.GetComponent<Player>();
 			m_PlayerBody = m_Player.gameObject.GetComponent<Rigidbody2D>();
-			m_InputController = m_Player.InputController;
+			m_InputController = GameSetup.Instance.InputController;
 
 			m_InputController.Phase.Subscribe(HandleInput);
 		}
@@ -39,6 +40,8 @@ namespace Shimmer.Game.Player
 			if (m_InputController != null)
 			{
 				m_InputController.Phase.Unsubscribe(HandleInput);
+
+				m_InputController = null;
 			}
 		}
 
@@ -128,6 +131,14 @@ namespace Shimmer.Game.Player
 			}
 
 			m_IsLeaving = true;
+		}
+
+		private void OnDisable()
+		{
+			if (m_InputController != null)
+			{
+				m_InputController.Phase.Unsubscribe(HandleInput);
+			}
 		}
 	}
 }

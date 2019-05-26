@@ -60,14 +60,20 @@ namespace Shimmer.Common.Variables
             Assert.IsTrue(found, "Callback not found, already unsubscribed?");
             Assert.IsTrue(count > 0);
 
-            if (count == 1)
-            {
-                m_listeners.Remove(_callback);
-            }
-            else
-            {
-                m_listeners[_callback] = count - 1;
-            }
+			try
+			{
+				if (count == 1)
+				{
+					m_listeners.Remove(_callback);
+				}
+				else
+				{
+					m_listeners[_callback] = count - 1;
+				}
+			} catch (Exception e)
+			{
+				Debug.LogError(e.Message);
+			}
         }
 
 		public bool HasSubscribed(Callback _callback)

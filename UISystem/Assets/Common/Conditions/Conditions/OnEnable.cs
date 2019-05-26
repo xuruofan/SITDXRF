@@ -1,5 +1,6 @@
 ﻿using Shimmer.Common.Variables;
 using System;
+using UnityEngine;
 
 namespace Shimmer.Common.Conditions.Conditions
 {
@@ -13,6 +14,9 @@ namespace Shimmer.Common.Conditions.Conditions
 				return "Conditions/OnEnable";
 			}
 		}
+
+		[HideInInspector]
+		public bool Dummy = false;
 
 		private bool m_Enabled = false;
 

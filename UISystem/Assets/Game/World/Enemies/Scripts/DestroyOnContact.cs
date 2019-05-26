@@ -9,11 +9,18 @@ namespace Shimmer.Game.World.Enemies
 			Debug.Log("DestroyOnContact started");	
 		}
 
-		private void OnTriggerEnter2D(Collider2D collision)
+		private void OnTriggerEnter2D(Collider2D _collision)
 		{
-			if (collision.gameObject.tag == "DestroyByUltimate")
+			string tag = _collision.gameObject.tag;
+
+			if (tag == "DestroyByUltimate")
 			{
-				GameObject.Destroy(collision.gameObject);
+				GameObject.Destroy(_collision.gameObject);
+			}
+			else if (tag == "Player")
+			{
+				var player = _collision.gameObject.GetComponent<Player.Player>();
+				player.Kill();
 			}
 		}
 	}

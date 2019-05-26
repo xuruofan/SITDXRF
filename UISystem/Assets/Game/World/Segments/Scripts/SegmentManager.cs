@@ -10,7 +10,7 @@ namespace Shimmer.Game.World.Segments
 		public IntReference CurrentDifficulty;
 		public SegmentDataVariable AllSegments;
 		public PrefabListVariable SegmentsForNow;
-
+		
 		private void Awake()
 		{
 			Assert.IsNotNull(AllSegments);

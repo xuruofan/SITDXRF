@@ -28,12 +28,13 @@ MonoBehaviour:
         Value:
           Selection: 1
           Constant: 
-          Variable: {fileID: 11400000, guid: 2da2e7e6a36bfa1449d7f1412f24266f, type: 2}
+          Variable: {fileID: 11400000, guid: 49a0fcc40a6ae134398cfa7e83f0a3b7, type: 2}
       m_Texts_PrintLog: []
       m_Visuals_Flip: []
       m_Visuals_SetAnimationTrigger: []
       m_Visuals_SetAnimationBool: []
       m_Visuals_SetImageFill: []
+      m_Visuals_SetCamera: []
       m_UI_GoTo: []
       m_UI_GoBack: []
       m_UI_LoadScene: []
@@ -52,9 +53,34 @@ MonoBehaviour:
       m_Visuals_SetAnimationTrigger: []
       m_Visuals_SetAnimationBool: []
       m_Visuals_SetImageFill: []
+      m_Visuals_SetCamera: []
       m_UI_GoTo: []
       m_UI_GoBack: []
       m_UI_LoadScene:
       - SceneName: Game_Runtime
         SceneMode: 1
+      m_UI_UnloadScene: []
+    - m_Actions_Invoke: []
+      m_Actions_Delay: []
+      m_Actions_ActivateGameObject: []
+      m_Actions_EnableComponent: []
+      m_Actions_Pause: []
+      m_Variables_SetInt: []
+      m_Variables_SetBool: []
+      m_Texts_SetText: []
+      m_Texts_SetString:
+      - String: {fileID: 11400000, guid: 88c4131aa1989ba43b3329b5506ed70c, type: 2}
+        Value:
+          Selection: 1
+          Constant: 
+          Variable: {fileID: 11400000, guid: 2da2e7e6a36bfa1449d7f1412f24266f, type: 2}
+      m_Texts_PrintLog: []
+      m_Visuals_Flip: []
+      m_Visuals_SetAnimationTrigger: []
+      m_Visuals_SetAnimationBool: []
+      m_Visuals_SetImageFill: []
+      m_Visuals_SetCamera: []
+      m_UI_GoTo: []
+      m_UI_GoBack: []
+      m_UI_LoadScene: []
       m_UI_UnloadScene: []

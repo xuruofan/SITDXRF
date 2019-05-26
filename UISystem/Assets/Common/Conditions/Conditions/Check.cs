@@ -29,7 +29,7 @@ namespace Shimmer.Common.Conditions.Conditions
 
 		public override void Unsubscribe(Callback _callback)
 		{
-			ConditionList.GetValue().Disable();
+			ConditionList.GetValue().Disable(_callback);
 		}
 	}
 }

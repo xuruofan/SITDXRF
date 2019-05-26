@@ -9,6 +9,16 @@ namespace Shimmer.Game.World.Others
 
 		private void OnEnable()
 		{
+			PlayerHeight.Subscribe(UpdateHeight);
+		}
+
+		private void OnDisable()
+		{
+			PlayerHeight.Unsubscribe(UpdateHeight);
+		}
+
+		private void UpdateHeight()
+		{
 			Vector3 pos = gameObject.transform.position;
 			pos.y = PlayerHeight.GetValue();
 			if (pos.y < 0)
@@ -17,8 +27,6 @@ namespace Shimmer.Game.World.Others
 			}
 
 			gameObject.transform.position = pos;
-
-			enabled = false;
 		}
 	}
 }

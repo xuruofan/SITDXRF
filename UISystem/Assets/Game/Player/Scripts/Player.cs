@@ -2,6 +2,7 @@
 using Shimmer.Common.Variables;
 using Shimmer.Game.GameLogic;
 using Shimmer.Game.InputControl;
+using Shimmer.UI.Common;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -12,7 +13,8 @@ namespace Shimmer.Game.Player
 		public delegate void OnCollisionEnterEvent(Collision2D _collision);
 		public delegate void OnCollisionExitEvent(Collision2D _collision);
 
-		public InputController InputController;
+		public BoolVariable Dead;
+
 		[SerializeField]
 		public GameObject Visual;
 
@@ -27,10 +29,52 @@ namespace Shimmer.Game.Player
 			}
 		}
 
+		public float Lives
+		{
+			get { return m_Lives; }
+			private set
+			{
+				m_Lives = value;
+				LifeValue.SetValue(value);
+			}
+		}
+
+		public float Height
+		{
+			get { return m_Height; }
+			private set
+			{
+				m_Height = value;
+
+				HeightValue.SetValue(value);
+
+				if (value > MaxHeight)
+				{
+					MaxHeight = value;
+				}
+			}
+		}
+
+		public float MaxHeight
+		{
+			get { return m_MaxHeight; }
+			private set
+			{
+				m_MaxHeight = value;
+
+				MaxHeightValue.SetValue(value);
+			}
+		}
+
 		private float m_Charge;
+		private float m_Lives;
+		private float m_Height;
+		private float m_MaxHeight;
 
 		public FloatReference ChargeValue;
-		public FloatVariable Height;
+		public FloatReference LifeValue;
+		public FloatVariable HeightValue;
+		public FloatVariable MaxHeightValue;
 
 		public bool IsFacingRight
 		{
@@ -62,6 +106,7 @@ namespace Shimmer.Game.Player
 		private FloatReference MaxYSpeed;
 		public FloatReference MaxCharge;
 		public FloatReference DefaultCharge;
+		public FloatReference DefaultLives;
 
 		public OnCollisionEnterEvent OnCollisionEntered;
 		public OnCollisionExitEvent OnCollisionExited;
@@ -92,11 +137,15 @@ namespace Shimmer.Game.Player
 			Assert.IsNotNull(m_Body, "Rigidbody2D is not found on player gameobject!");
 
 			Charge = DefaultCharge.GetValue();
+			Lives = DefaultLives.GetValue();
+			MaxHeight = 0;
+
+			Dead.SetValue(false);
 		}
 
 		private void Update()
 		{
-			Height.SetValue(transform.position.y);
+			Height = transform.position.y;
 		}
 
 		private void FixedUpdate()
@@ -124,6 +173,13 @@ namespace Shimmer.Game.Player
 		public void ResetCharge()
 		{
 			Charge = DefaultCharge.GetValue();
+		}
+
+		public void Kill()
+		{
+			Lives = 0;
+
+			Dead.SetValue(true);
 		}
 
 		private void OnCollisionEnter2D(Collision2D _collision)

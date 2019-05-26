@@ -70,6 +70,8 @@ namespace Shimmer.Tools.Editor
 			var element = m_List.serializedProperty.GetArrayElementAtIndex(_index);
 			_rect.yMin += EditorGUIUtility.standardVerticalSpacing;
 			_rect.yMax += EditorGUIUtility.standardVerticalSpacing;
+			_rect.xMin += 10;
+
 			EditorGUI.PropertyField(_rect, element, GUIContent.none, true);
 
 			EditorGUI.indentLevel--;
@@ -106,6 +108,7 @@ namespace Shimmer.Tools.Editor
 			var prop = _property.Copy();
 			var end = _property.GetEndProperty();
 			// Display the "Items" field at the end
+
 			if (prop.NextVisible(true))
 			{
 				do

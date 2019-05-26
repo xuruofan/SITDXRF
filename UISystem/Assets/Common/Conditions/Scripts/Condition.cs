@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Shimmer.Common.Variables;
 using Shimmer.Tools;
 using UnityEngine;
@@ -24,40 +25,36 @@ namespace Shimmer.Common.Conditions
 		[Tooltip("Empty condition list returns FALSE for OR and TRUE for AND")]
 		public OperatorSelection Operator = OperatorSelection.Or;
 
-		private Callback m_Callback;
-
 		public void Enable(Callback _callback)
 		{
-			m_Callback = _callback;
-			Subscribe();
+			Subscribe(_callback);
 		}
 
-		public void Disable()
+		public void Disable(Callback _callback)
 		{
-			Unsubscribe();
-			m_Callback = null;
+			Unsubscribe(_callback);
 		}
 
-		private void Subscribe()
+		private void Subscribe(Callback _callback)
 		{
 			foreach (var item in Items)
 			{
 				Condition condition = item;
 				if (condition != null)
 				{
-					condition.Subscribe(m_Callback);
+					condition.Subscribe(_callback);
 				}
 			}
 		}
 
-		private void Unsubscribe()
+		private void Unsubscribe(Callback _callback)
 		{
 			foreach (var item in Items)
 			{
 				Condition condition = item;
 				if (condition != null)
 				{
-					condition.Unsubscribe(m_Callback);
+					condition.Unsubscribe(_callback);
 				}
 			}
 		}

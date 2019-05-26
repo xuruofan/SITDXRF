@@ -14,9 +14,12 @@ namespace Shimmer.Common.Actions
 		public Actions.Pause[] m_Actions_Pause;
 		// Variable
 		public Variables.SetInt[] m_Variables_SetInt;
+		public Variables.SetFloat[] m_Variables_SetFloat;
 		public Variables.SetBool[] m_Variables_SetBool;
 		// Text
 		public Texts.SetText[] m_Texts_SetText;
+		public Texts.SetTextFromFloat[] m_Texts_SetTextFromFloat;
+		public Texts.SetTextFromInt[] m_Texts_SetTextFromInt;
 		public Texts.SetString[] m_Texts_SetString;
 		public Texts.PrintLog[] m_Texts_PrintLog;
 		// Visuals

@@ -17,7 +17,7 @@ namespace Shimmer.Common.Reactions
 
 		private void OnDisable()
 		{
-			If.Disable();
+			If.Disable(OnStateChanged);
 		}
 
 		private void OnStateChanged()

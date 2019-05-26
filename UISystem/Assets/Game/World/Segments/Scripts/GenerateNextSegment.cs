@@ -15,7 +15,16 @@ namespace Shimmer.Game.World.Segments
 			{
 				PrefabList prefabs = Prefabs.GetValue();
 
-				GameObject nextSegObject = Instantiate<GameObject>(prefabs.Items[Random.Range(0, prefabs.Items.Length)]);
+				Transform cur = transform;
+				Transform parent = cur;
+
+				while (cur != null)
+				{
+					parent = cur;
+					cur = cur.parent;
+				}
+
+				GameObject nextSegObject = Instantiate<GameObject>(prefabs.Items[Random.Range(0, prefabs.Items.Length)], parent);
 				nextSegObject.transform.position = NextSpawnPoint.position;
 				bool bFlip = Random.Range(0, 2) == 1;
 				if (bFlip)
