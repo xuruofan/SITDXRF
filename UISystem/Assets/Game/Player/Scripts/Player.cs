@@ -1,4 +1,5 @@
 ﻿using Shimmer.Common.Variables;
+using Shimmer.Game.World.Enemies;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -10,6 +11,7 @@ namespace Shimmer.Game.Player
 		public delegate void OnCollisionExitEvent(Collision2D _collision);
 
 		public BoolVariable Dead;
+		public StringVariable DeathMessage;
 
 		[SerializeField]
 		public GameObject Visual;
@@ -178,11 +180,23 @@ namespace Shimmer.Game.Player
 			m_IsRecharging = _start;
 		}
 
-		public void Kill()
+		public void Damage(HarmfulObject _obj)
+		{
+			int damage = _obj.GetDamage();
+			Lives -= damage;
+
+			if (Lives <= float.Epsilon)
+			{
+				Kill(_obj);
+			}
+		}
+
+		public void Kill(HarmfulObject _obj)
 		{
 			Lives = 0;
 
 			Dead.SetValue(true);
+			DeathMessage.SetValue(_obj.GetMessage());
 		}
 
 		private void OnCollisionEnter2D(Collision2D _collision)

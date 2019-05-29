@@ -6,7 +6,7 @@ namespace Shimmer.Game.World.Enemies
 	{
 		private void Start()
 		{
-			Debug.Log("DestroyOnContact started");	
+			Debug.Log("DestroyOnContact started");
 		}
 
 		private void OnTriggerEnter2D(Collider2D _collision)
@@ -20,7 +20,7 @@ namespace Shimmer.Game.World.Enemies
 			else if (tag == "Player")
 			{
 				var player = _collision.gameObject.GetComponent<Player.Player>();
-				player.Kill();
+				player.Kill(GetComponentInParent<HarmfulObject>());
 			}
 		}
 	}
