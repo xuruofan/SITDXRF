@@ -16,6 +16,7 @@ namespace Shimmer.Game.Player
 			base.OnStateEnter(_animator, _stateInfo, _layerIndex);
 
 			m_Player.OnCollisionExited += OnCollide;
+			m_Player.Recharge(false);
 		}
 
 		public override void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
@@ -103,7 +104,7 @@ namespace Shimmer.Game.Player
 
 			base.LeaveState();
 
-			m_Player.ResetCharge();
+			m_Player.Recharge(true);
 		}
 	}
 }

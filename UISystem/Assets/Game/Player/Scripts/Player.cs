@@ -1,8 +1,4 @@
-﻿using System;
-using Shimmer.Common.Variables;
-using Shimmer.Game.GameLogic;
-using Shimmer.Game.InputControl;
-using Shimmer.UI.Common;
+﻿using Shimmer.Common.Variables;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -99,6 +95,7 @@ namespace Shimmer.Game.Player
 		public Vector2 LastVelocity { get; private set; } = Vector2.zero;
 
 		private bool m_IsColliding = false;
+		private bool m_IsRecharging = false;
 
 		[SerializeField]
 		private FloatReference MaxXSpeed;
@@ -106,15 +103,16 @@ namespace Shimmer.Game.Player
 		private FloatReference MaxYSpeed;
 		public FloatReference MaxCharge;
 		public FloatReference DefaultCharge;
+		public FloatReference RechargeSpeed;
 		public FloatReference DefaultLives;
 
 		public OnCollisionEnterEvent OnCollisionEntered;
 		public OnCollisionExitEvent OnCollisionExited;
 
 		private Rigidbody2D m_Body = null;
-		
 
-		public float MAX_X_SPEED 
+
+		public float MAX_X_SPEED
 		{
 			get
 			{
@@ -146,6 +144,11 @@ namespace Shimmer.Game.Player
 		private void Update()
 		{
 			Height = transform.position.y;
+
+			if (m_IsRecharging && Charge < DefaultCharge.GetValue())
+			{
+				Charge += RechargeSpeed.GetValue() * Time.deltaTime;
+			}
 		}
 
 		private void FixedUpdate()
@@ -153,7 +156,7 @@ namespace Shimmer.Game.Player
 			if (!m_IsColliding)
 			{
 				LastVelocity = m_Body.velocity;
-			}	
+			}
 		}
 
 		public void CollectSpark()
@@ -170,9 +173,9 @@ namespace Shimmer.Game.Player
 			Charge = Mathf.Clamp(amount, 0, MaxCharge.GetValue());
 		}
 
-		public void ResetCharge()
+		public void Recharge(bool _start)
 		{
-			Charge = DefaultCharge.GetValue();
+			m_IsRecharging = _start;
 		}
 
 		public void Kill()
