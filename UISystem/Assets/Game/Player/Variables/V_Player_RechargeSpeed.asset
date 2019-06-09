@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac3318365ed3415418f572146e63d4aa, type: 3}
-  m_Name: V_Player_MaxYSpeed
+  m_Name: V_Player_RechargeSpeed
   m_EditorClassIdentifier: 
   Reset: 0
-  m_Value: 12
+  m_Value: 1

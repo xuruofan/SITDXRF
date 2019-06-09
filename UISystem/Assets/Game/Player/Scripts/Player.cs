@@ -107,7 +107,6 @@ namespace Shimmer.Game.Player
 		public FloatReference DefaultCharge;
 		public FloatReference RechargeSpeed;
 		public FloatReference DefaultLives;
-
 		public OnCollisionEnterEvent OnCollisionEntered;
 		public OnCollisionExitEvent OnCollisionExited;
 
@@ -197,6 +196,7 @@ namespace Shimmer.Game.Player
 
 			Dead.SetValue(true);
 			DeathMessage.SetValue(_obj.GetMessage());
+			m_Body.bodyType = RigidbodyType2D.Static;
 		}
 
 		private void OnCollisionEnter2D(Collision2D _collision)

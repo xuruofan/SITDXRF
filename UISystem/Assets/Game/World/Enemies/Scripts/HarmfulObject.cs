@@ -18,7 +18,7 @@ namespace Shimmer.Game.World.Enemies
 			int count = m_Messages.Length;
 			if (count > 0)
 			{
-				message = m_Messages[Random.Range(0, count - 1)].GetValue();
+				message = m_Messages[Random.Range(0, count)].GetValue();
 			}
 
 			return message;

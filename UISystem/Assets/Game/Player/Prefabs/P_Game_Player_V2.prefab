@@ -105,6 +105,7 @@ MonoBehaviour:
       m_Actions_EnableComponent: []
       m_Actions_Pause: []
       m_Variables_SetInt: []
+      m_Variables_SetFloat: []
       m_Variables_SetBool: []
       m_Texts_SetText: []
       m_Texts_SetTextFromFloat: []
@@ -177,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dead: {fileID: 11400000, guid: 19204c1ab98fbd7469f28a3b006c5227, type: 2}
+  DeathMessage: {fileID: 11400000, guid: 1eb7a492dfdea634cbea2a2bea345b51, type: 2}
   Visual: {fileID: 3828621110123636194}
   ChargeValue:
     Selection: 1
@@ -204,6 +206,10 @@ MonoBehaviour:
     Selection: 1
     Constant: 0
     Variable: {fileID: 11400000, guid: ee565cada93a00f4caee517d483eaf39, type: 2}
+  RechargeSpeed:
+    Selection: 1
+    Constant: 0
+    Variable: {fileID: 11400000, guid: 9f5abaaf15373724ab83fb7603214a35, type: 2}
   DefaultLives:
     Selection: 1
     Constant: 0
@@ -345,6 +351,7 @@ MonoBehaviour:
       m_Actions_EnableComponent: []
       m_Actions_Pause: []
       m_Variables_SetInt: []
+      m_Variables_SetFloat: []
       m_Variables_SetBool: []
       m_Texts_SetText: []
       m_Texts_SetTextFromFloat: []

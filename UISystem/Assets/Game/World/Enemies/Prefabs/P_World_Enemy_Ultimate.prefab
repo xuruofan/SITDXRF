@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7580501222431176196}
   - component: {fileID: 114820525863501766}
+  - component: {fileID: 3089239120329752724}
   - component: {fileID: 50883871558524802}
   - component: {fileID: 61374620065018584}
   - component: {fileID: 296214360298818890}
@@ -50,6 +51,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53449bfdb1d91f847a36affa8a5d3576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3089239120329752724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198164136966902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d5938c58dbba047a6a8c3fbec53602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Messages:
+  - Selection: 0
+    Constant: You are dead...
+    Variable: {fileID: 0}
+  - Selection: 0
+    Constant: You can never escape...From darkness.
+    Variable: {fileID: 0}
+  m_Damage:
+    Selection: 0
+    Constant: 0
+    Variable: {fileID: 0}
 --- !u!50 &50883871558524802
 Rigidbody2D:
   serializedVersion: 4
@@ -738,7 +762,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -874,7 +898,7 @@ ParticleSystem:
     m_TextureColorAffectsParticles: 1
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
-    randomDirectionAmount: 0.1
+    randomDirectionAmount: 0
     sphericalDirectionAmount: 0
     randomPositionAmount: 0.06
     radius:
@@ -1615,7 +1639,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -1672,7 +1696,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 3.79
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2096,7 +2120,7 @@ ParticleSystem:
     radial:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -0.25
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2428,7 +2452,7 @@ ParticleSystem:
       m_Bits: 4294967295
     influenceList: []
   ClampVelocityModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -2641,7 +2665,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    separateAxis: 0
+    separateAxis: 1
     inWorldSpace: 0
     multiplyDragByParticleSize: 1
     multiplyDragByParticleVelocity: 1
@@ -5436,7 +5460,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5572,8 +5596,8 @@ ParticleSystem:
     m_TextureColorAffectsParticles: 1
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
-    randomDirectionAmount: 0.2
-    sphericalDirectionAmount: 0.08
+    randomDirectionAmount: 0
+    sphericalDirectionAmount: 0
     randomPositionAmount: 0.06
     radius:
       value: 5
@@ -6313,7 +6337,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -6370,7 +6394,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 2.4
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -7126,7 +7150,7 @@ ParticleSystem:
       m_Bits: 4294967295
     influenceList: []
   ClampVelocityModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -7455,7 +7479,7 @@ ParticleSystem:
     strengthY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.31
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7558,7 +7582,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    separateAxes: 0
+    separateAxes: 1
     frequency: 0.05
     damping: 1
     octaves: 1
