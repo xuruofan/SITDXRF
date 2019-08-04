@@ -73,6 +73,7 @@ namespace Shimmer.Game.Player
 		public FloatReference LifeValue;
 		public FloatVariable HeightValue;
 		public FloatVariable MaxHeightValue;
+		public IntVariable SparksCollected;
 
 		public bool IsFacingRight
 		{
@@ -163,8 +164,10 @@ namespace Shimmer.Game.Player
 		public void CollectSpark()
 		{
 			float amount = Charge + 1.0f;
-
 			Charge = Mathf.Clamp(amount, 0, MaxCharge.GetValue());
+
+			int sparksCollected = SparksCollected.GetValue() + 1;
+			SparksCollected.SetValue(sparksCollected);
 		}
 
 		public void SpendCharge(float _amount)

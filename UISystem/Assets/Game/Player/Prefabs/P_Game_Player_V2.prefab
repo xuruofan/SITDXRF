@@ -190,6 +190,7 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: ebc02dcda4812f242ae127817a80d5f2, type: 2}
   HeightValue: {fileID: 11400000, guid: 9f7c610ef6b10aa49b325c686710c5bf, type: 2}
   MaxHeightValue: {fileID: 11400000, guid: e558fb4206771374b895f18d97e88cfa, type: 2}
+  SparksCollected: {fileID: 11400000, guid: 6cfd449e078cce04cab58d19f0693cd9, type: 2}
   MaxXSpeed:
     Selection: 1
     Constant: 0
@@ -230,6 +231,10 @@ MonoBehaviour:
     Selection: 1
     Constant: 0
     Variable: {fileID: 11400000, guid: e558fb4206771374b895f18d97e88cfa, type: 2}
+  SparksCollected:
+    Selection: 1
+    Constant: 0
+    Variable: {fileID: 11400000, guid: 6cfd449e078cce04cab58d19f0693cd9, type: 2}
   Score:
     Selection: 1
     Constant: 0

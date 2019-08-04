@@ -11,7 +11,6 @@ namespace Shimmer.Common.Actions
 		public Actions.Delay[] m_Actions_Delay;
 		public Actions.ActivateGameObject[] m_Actions_ActivateGameObject;
 		public Actions.EnableComponent[] m_Actions_EnableComponent;
-		public Actions.Pause[] m_Actions_Pause;
 		// Variable
 		public Variables.SetInt[] m_Variables_SetInt;
 		public Variables.SetFloat[] m_Variables_SetFloat;
@@ -23,7 +22,6 @@ namespace Shimmer.Common.Actions
 		public Texts.SetString[] m_Texts_SetString;
 		public Texts.PrintLog[] m_Texts_PrintLog;
 		// Visuals
-		public Visuals.Flip[] m_Visuals_Flip;
 		public Visuals.SetAnimationTrigger[] m_Visuals_SetAnimationTrigger;
 		public Visuals.SetAnimationBool[] m_Visuals_SetAnimationBool;
 		public Visuals.SetImageFill[] m_Visuals_SetImageFill;

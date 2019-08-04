@@ -7,10 +7,11 @@ namespace Shimmer.Common.Variables
     {
 		public bool Reset;
 
-        private void OnEnable()
+#if UNITY_EDITOR
+		private void OnEnable()
         {
-            EditorApplication.playModeStateChanged += OnPlayModeStateChangedChanged;
-        }
+			EditorApplication.playModeStateChanged += OnPlayModeStateChangedChanged;
+		}
 
         private void OnPlayModeStateChangedChanged(PlayModeStateChange obj)
         {
@@ -19,5 +20,6 @@ namespace Shimmer.Common.Variables
                 Resources.UnloadAsset(this);
             }
         }
-    }
+#endif
+	}
 }

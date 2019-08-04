@@ -10,7 +10,9 @@ namespace Shimmer.Game.World.Segments
 		public IntReference CurrentDifficulty;
 		public SegmentDataVariable AllSegments;
 		public PrefabListVariable SegmentsForNow;
-		
+
+		private int m_CurrentLevel;
+
 		private void Awake()
 		{
 			Assert.IsNotNull(AllSegments);
@@ -35,10 +37,19 @@ namespace Shimmer.Game.World.Segments
 			int numLevels = levels.Length;
 			int difficulty = CurrentDifficulty.GetValue();
 
-			if (difficulty < numLevels)
+			if (difficulty > m_CurrentLevel && difficulty <= numLevels)
 			{
-				var segments = levels[difficulty].GetValue();
-				SegmentsForNow.SetValue(segments);
+				var currentSegments = SegmentsForNow.GetValue().Items;
+				var newSegments = levels[difficulty-1].GetValue().Items;
+
+				var newItems = new GameObject[currentSegments.Length + newSegments.Length];
+				currentSegments.CopyTo(newItems, 0);
+				newSegments.CopyTo(newItems, currentSegments.Length);
+
+				SegmentsForNow.GetValue().Items = newItems;
+				SegmentsForNow.SetValue(SegmentsForNow.GetValue());
+
+				m_CurrentLevel = difficulty;
 			}
 		}
 	}

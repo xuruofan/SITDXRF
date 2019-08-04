@@ -67,8 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e4bd938246f0e47bc616d8e21e1397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextSpawnPoint: {fileID: 224394868417040356}
-  Prefabs: {fileID: 11400000, guid: 9b81b1acb5d9d054690a3e5a0b286fa2, type: 2}
+  m_ParentObject: {fileID: 1757667308814430}
+  m_NextSpawnPoint: {fileID: 224394868417040356}
+  m_Prefabs: {fileID: 11400000, guid: 9b81b1acb5d9d054690a3e5a0b286fa2, type: 2}
 --- !u!1 &1463794724835940
 GameObject:
   m_ObjectHideFlags: 0

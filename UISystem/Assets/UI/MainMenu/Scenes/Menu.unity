@@ -489,6 +489,7 @@ GameObject:
   - component: {fileID: 1197952882}
   - component: {fileID: 1197952881}
   - component: {fileID: 1197952885}
+  - component: {fileID: 1197952886}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -592,6 +593,19 @@ MonoBehaviour:
     Selection: 1
     Constant: 0
     Variable: {fileID: 11400000, guid: 46043b9716e791644acc3f6fc197f944, type: 2}
+--- !u!114 &1197952886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197952880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456acd69c1565cb4685814450df9a2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Width: 5.4
 --- !u!1 &1461414972
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +926,26 @@ PrefabInstance:
       propertyPath: OnEnabled.Items.Array.data[0].m_Visuals_SetCamera.Array.data[0].Camera
       value: 
       objectReference: {fileID: 1197952883}
+    - target: {fileID: 224914997222908080, guid: c3146b0de99365144b1f6615430a8aba,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224914997222908080, guid: c3146b0de99365144b1f6615430a8aba,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224914997222908080, guid: c3146b0de99365144b1f6615430a8aba,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -960
+      objectReference: {fileID: 0}
+    - target: {fileID: 224914997222908080, guid: c3146b0de99365144b1f6615430a8aba,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1189.6001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3146b0de99365144b1f6615430a8aba, type: 3}
 --- !u!1 &1904933307
