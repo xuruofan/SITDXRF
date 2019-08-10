@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c8ecdeb07bfe04ca1367994f828d1a, type: 3}
+  m_Name: V_Game_World_SegmentData
+  m_EditorClassIdentifier: 
+  Reset: 0
+  m_Value:
+    Levels:
+    - {fileID: 11400000, guid: 62845417f040fe24097f5c4df4c33807, type: 2}
+    - {fileID: 11400000, guid: 865390f3c56f20b479c1372e258e26f1, type: 2}

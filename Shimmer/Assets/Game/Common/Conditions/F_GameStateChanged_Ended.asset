@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a93ee7657e54d419319f5818d4f3ac, type: 3}
+  m_Name: F_GameStateChanged_Ended
+  m_EditorClassIdentifier: 
+  Reset: 0
+  m_Value:
+    Items:
+    - m_Situation_Check: []
+      m_Situation_OnEnable: []
+      m_Variable_Changed:
+      - Variable: {fileID: 11400000, guid: 88c4131aa1989ba43b3329b5506ed70c, type: 2}
+      m_Variable_TestString: []
+    - m_Situation_Check: []
+      m_Situation_OnEnable: []
+      m_Variable_Changed: []
+      m_Variable_TestString:
+      - A:
+          Selection: 1
+          Constant: 
+          Variable: {fileID: 11400000, guid: 88c4131aa1989ba43b3329b5506ed70c, type: 2}
+        B:
+          Selection: 1
+          Constant: 
+          Variable: {fileID: 11400000, guid: d89785327c593e9409c35fa41c4e0648, type: 2}
+    Operator: 1

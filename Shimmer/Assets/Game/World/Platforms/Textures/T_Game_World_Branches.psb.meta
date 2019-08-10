@@ -1,0 +1,479 @@
+fileFormatVersion: 2
+guid: 837a9325b2514404f81e3ca8829806ec
+ScriptedImporter:
+  fileIDToRecycleName:
+    2800002: T_Game_World_Branches
+    21300000: Branch4
+    21300002: Branch1
+    21300004: Ground
+    21300006: Branch2
+    21300008: Branch3
+    21300010: "\u56FE\u5C42 17"
+    21300012: Branch5
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: Branch4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1092
+      y: 1932
+      width: 332
+      height: 276
+    spriteID: 205f4c69a8aca6548950291678de1f5d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 344, y: 1354}
+  - name: Branch1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1196
+      y: 709
+      width: 330
+      height: 165
+    spriteID: 0d34aa46b03acf940b224a2a2a50e269
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 499, y: -819}
+  - name: Ground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1932
+      width: 1080
+      height: 327
+    spriteID: 4cc14d08151258e4fb6e6e5966efbbd1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1932}
+  - name: Branch2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1092
+      y: 4
+      width: 486
+      height: 697
+    spriteID: 7dfc1b71fa241cb4fbf940f979b7feef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1092, y: -1070}
+  - name: Branch3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1092
+      y: 709
+      width: 96
+      height: 657
+    spriteID: b213bc1f1e3206043b62f5b9e2a593c5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1092, y: -189}
+  - name: "\u56FE\u5C42 17"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1080
+      height: 1920
+    spriteID: ccafc75a1b1ea6f488e906dedf519172
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: Branch5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1432
+      y: 1932
+      width: 354
+      height: 163
+    spriteID: cfd3a3bfe7f9cfa44bb3d1e7c62377f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1432, y: 969}
+  rigSpriteImportData:
+  - name: Branch4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1092
+      y: 1932
+      width: 332
+      height: 276
+    spriteID: 8c696929fef1ada4991416df24fb165a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 344, y: 1354}
+  - name: Branch1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1432
+      y: 1932
+      width: 330
+      height: 165
+    spriteID: c35769d036d5b0240aab897a6f5200a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 735, y: 404}
+  - name: Ground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1932
+      width: 1080
+      height: 327
+    spriteID: 6540df631bfa72d418faf5a24d46af1a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1932}
+  - name: Branch2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1092
+      y: 4
+      width: 486
+      height: 697
+    spriteID: 9ddbee6bef1899d4fa69bafceabdca0a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1092, y: -1070}
+  - name: Branch3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1092
+      y: 709
+      width: 96
+      height: 657
+    spriteID: b2c45fd573e194d468156d35b3faa29d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1092, y: -189}
+  - name: "\u56FE\u5C42 17"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1080
+      height: 1920
+    spriteID: 96fe030fdf4d6ab40be8982070a2e779
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 2048
+  documentSize: {x: 1080, y: 1920}
+  textureActualWidth: 2048
+  textureActualHeight: 4096
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 0
+  mosaicPSDLayers:
+  - name: Branch4
+    spriteName: Branch4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 205f4c69a8aca6548950291678de1f5d
+    layerID: 84
+    mosaicPosition: {x: 1092, y: 1932}
+  - name: Branch1
+    spriteName: Branch1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0d34aa46b03acf940b224a2a2a50e269
+    layerID: 5
+    mosaicPosition: {x: 1196, y: 709}
+  - name: Ground
+    spriteName: Ground
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4cc14d08151258e4fb6e6e5966efbbd1
+    layerID: 81
+    mosaicPosition: {x: 4, y: 1932}
+  - name: Branch5
+    spriteName: Branch5
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cfd3a3bfe7f9cfa44bb3d1e7c62377f9
+    layerID: 95
+    mosaicPosition: {x: 1432, y: 1932}
+  - name: Branch2
+    spriteName: Branch2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7dfc1b71fa241cb4fbf940f979b7feef
+    layerID: 30
+    mosaicPosition: {x: 1092, y: 4}
+  - name: Branch3
+    spriteName: Branch3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b213bc1f1e3206043b62f5b9e2a593c5
+    layerID: 50
+    mosaicPosition: {x: 1092, y: 709}
+  - name: "\u56FE\u5C42 17"
+    spriteName: "\u56FE\u5C42 17"
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ccafc75a1b1ea6f488e906dedf519172
+    layerID: 80
+    mosaicPosition: {x: 4, y: 4}
+  rigPSDLayers:
+  - name: Branch4
+    spriteName: Branch4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8c696929fef1ada4991416df24fb165a
+    layerID: 84
+    mosaicPosition: {x: 1092, y: 1932}
+  - name: Branch1
+    spriteName: Branch1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c35769d036d5b0240aab897a6f5200a5
+    layerID: 5
+    mosaicPosition: {x: 1432, y: 1932}
+  - name: Ground
+    spriteName: Ground
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6540df631bfa72d418faf5a24d46af1a
+    layerID: 81
+    mosaicPosition: {x: 4, y: 1932}
+  - name: Branch2
+    spriteName: Branch2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9ddbee6bef1899d4fa69bafceabdca0a
+    layerID: 30
+    mosaicPosition: {x: 1092, y: 4}
+  - name: Branch3
+    spriteName: Branch3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b2c45fd573e194d468156d35b3faa29d
+    layerID: 50
+    mosaicPosition: {x: 1092, y: 709}
+  - name: "\u56FE\u5C42 17"
+    spriteName: "\u56FE\u5C42 17"
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 96fe030fdf4d6ab40be8982070a2e779
+    layerID: 80
+    mosaicPosition: {x: 4, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+  boneGOs: []
+  generateGOHierarchy: 0
